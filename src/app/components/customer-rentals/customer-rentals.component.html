@@ -1,0 +1,29 @@
+
+<br><br>
+
+<div class="container">
+    <h2>Customer Rentals</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Rent Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rental of rentals" [ngClass]="getStatusClass(rental.status)">
+          <td>{{ rental.customer }}</td>
+          <td>{{ rental.regNumber }}</td>
+          <td>{{ rental.brand }}</td>
+          <td>{{ rental.model }}</td>
+          <td>{{ rental.rentDate }}</td>
+          <td>{{ rental.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

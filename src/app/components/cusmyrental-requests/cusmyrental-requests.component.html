@@ -1,0 +1,31 @@
+
+<br><br>
+<div class="container mt-3">
+    <h2>My Rental Requests</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Category</th>
+          <th>Request Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let request of rentalRequests"
+          [ngClass]="{ 'table-success': request.Status === 'approved', 'table-warning': request.Status === 'pending' }"
+        >
+          <td>{{ request.RegNumber }}</td>
+          <td>{{ request.Brand }}</td>
+          <td>{{ request.Model }}</td>
+          <td>{{ request.Category }}</td>
+          <td>{{ request.RequestDate | date: 'short' }}</td>
+          <td>{{ request.Status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,33 @@
+
+<br><br>
+
+<div class="container mt-3">
+    <h2>My Rentals</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Reg. Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Category</th>
+          <th>Rent Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rental of rentals">
+          <td>{{ rental.RegNumber }}</td>
+          <td>{{ rental.Brand }}</td>
+          <td>{{ rental.Model }}</td>
+          <td>{{ rental.Category }}</td>
+          <td>{{ rental.RentDate | date:'short' }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="returnRental(rental.Id)">
+              Return
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

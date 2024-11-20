@@ -1,0 +1,31 @@
+
+<br><br>
+<div class="container">
+    <h2>Available Motorbikes</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Reg. Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bike of motorbikes">
+          <td>{{ bike.regNumber }}</td>
+          <td>{{ bike.brand }}</td>
+          <td>{{ bike.model }}</td>
+          <td>{{ bike.category }}</td>
+          <td><img [src]="bike.imageUrl" alt="Bike Image" width="50"></td>
+          <td>
+            <button class="btn btn-primary" (click)="onUpdate(bike)">Update</button>
+            <button class="btn btn-danger" (click)="onDelete(bike.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

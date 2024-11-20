@@ -1,0 +1,39 @@
+
+<br><br>
+
+<div class="container mt-3">
+    <h2>Rental Requests</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Customer</th>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Request Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of rentalRequests">
+          <td>{{ request.Customer }}</td>
+          <td>{{ request.RegNumber }}</td>
+          <td>{{ request.Brand }}</td>
+          <td>{{ request.Model }}</td>
+          <td>{{ request.RequestDate | date:'short' }}</td>
+          <td>{{ request.Status }}</td>
+          <td>
+            <button
+              class="btn btn-success"
+              *ngIf="request.Status === 'pending'"
+              (click)="approveRequest(request.Id)"
+            >
+              Approve
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

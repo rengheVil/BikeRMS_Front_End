@@ -1,0 +1,27 @@
+
+<br><br>
+
+<div class="container mt-3">
+    <h2>Order History</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Reg. Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Rent Date</th>
+          <th>Return Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderHistory">
+          <td>{{ order.RegNumber }}</td>
+          <td>{{ order.Brand }}</td>
+          <td>{{ order.Model }}</td>
+          <td>{{ order.RentDate | date: 'short' }}</td>
+          <td>{{ order.ReturnDate | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

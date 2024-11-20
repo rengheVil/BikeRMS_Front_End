@@ -1,0 +1,41 @@
+<br><br>
+
+<div class="container mt-3">
+    <h2>Available Motorbikes</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Reg. Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let motorbike of motorbikes">
+          <td>{{ motorbike.RegNumber }}</td>
+          <td>{{ motorbike.Brand }}</td>
+          <td>{{ motorbike.Model }}</td>
+          <td>{{ motorbike.Category }}</td>
+          <td>
+            <img
+              *ngIf="motorbike.Image; else noImage"
+              [src]="motorbike.Image"
+              alt="Motorbike Image"
+              class="img-thumbnail"
+              style="width: 100px; height: 75px;"
+            />
+            <ng-template #noImage>No image</ng-template>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="requestRental(motorbike.Id)">
+              Request Rental
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

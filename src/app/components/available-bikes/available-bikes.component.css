@@ -1,0 +1,20 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead tr {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  thead th, tbody td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    margin: 0 5px;
+  }
+  

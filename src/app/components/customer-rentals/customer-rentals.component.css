@@ -1,0 +1,28 @@
+.bg-danger {
+    background-color: #f8d7da;
+  }
+  
+  .bg-success {
+    background-color: #d4edda;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead tr {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  thead th, tbody td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  

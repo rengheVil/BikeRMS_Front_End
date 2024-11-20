@@ -1,0 +1,64 @@
+
+<div class="Bike-management">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Customer Page </h1> <br>
+    <ul>
+      <li><a [routerLink]="['CusavaiBikes']" > Available Bikes </a></li>
+      <li><a [routerLink]="['CusmyRentals']" > My Rentals </a></li>
+      <li><a [routerLink]="['CusmyrentalRequest']" > Rental Request </a></li>
+      <li><a [routerLink]="['CusorderHistory']" > Order History </a></li>
+    </ul>
+
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                  aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand" href="#">Navbar</a>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      
+                  </ul>
+                  <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+              </div>
+          </div>
+      </nav>
+      
+      <div class="fullscreen">
+          <div class="sideBar">
+             
+          </div>
+          <div class="section">
+              <router-outlet></router-outlet>
+          </div>
+      
+      </div>
+  </div>
+</div>
+
+
+
+
