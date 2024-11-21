@@ -11,10 +11,10 @@ export class BikeService {
   constructor(private http : HttpClient) { }
 
   createbike(bike :Bike){
-    return this.http.post("https://localhost:7091/api/Motorbike" , bike)
+    return this.http.post("https://localhost:7178/api/Motorbike" , bike)
   }
 
-  private apiUrl = 'https://localhost:7091/api/Motorbike';
+  private apiUrl = 'https://localhost:7178/api/Motorbike';
 
   // register 
   register(userData: any): Observable<any> {
