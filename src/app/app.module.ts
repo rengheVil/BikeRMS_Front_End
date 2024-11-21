@@ -38,7 +38,8 @@ import { CommonModule } from '@angular/common';
     CusmyRentalsComponent,
     CusmyrentalRequestsComponent,
     MorderHistoryComponent,
-    CusorderHistoryComponent
+    CusorderHistoryComponent,
+    
   ],
   imports: [
     BrowserModule,

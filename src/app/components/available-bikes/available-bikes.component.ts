@@ -25,8 +25,7 @@ export class AvailableBikesComponent implements OnInit{
   }
 
   onUpdate(bike: any): void {
-    // Add logic to show update form/modal and call update API
-    const updatedBike = { ...bike, brand: 'Updated Brand' }; // Example
+      const updatedBike = { ...bike, brand: 'Updated Brand' }; 
     this.bikeService.updateMotorbike(bike.id, updatedBike).subscribe(
       (response) => {
         console.log('Updated:', response);

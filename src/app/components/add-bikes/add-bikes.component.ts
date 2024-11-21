@@ -30,6 +30,7 @@ export class AddBikesComponent  {
 
 
   onAddBike() {
+    console.log(this.addBikeForm.value)
     this.bike = (this.addBikeForm.value);
     this.bikeService.createbike(this.bike).subscribe(data => {
       // this.toastr.success("successfully added", "Success")
