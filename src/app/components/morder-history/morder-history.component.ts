@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
+import { RentalService } from "../../services/rental.service";
 
 
 @Component({
@@ -12,14 +13,14 @@ export class MorderHistoryComponent implements OnInit{
 
   orderHistory: any[] = [];
 
-  constructor(private bikeService: BikeService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
 
   ngOnInit(): void {
     this.loadOrderHistory();
   }
 
   loadOrderHistory(): void {
-    this.bikeService.getOrderHistory().subscribe((data) => {
+    this.rentalService.getOrderHistory().subscribe((data) => {
       this.orderHistory = data;
     });
   }

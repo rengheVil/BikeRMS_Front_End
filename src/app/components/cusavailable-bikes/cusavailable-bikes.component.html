@@ -14,15 +14,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let motorbike of motorbikes">
-          <td>{{ motorbike.RegNumber }}</td>
-          <td>{{ motorbike.Brand }}</td>
-          <td>{{ motorbike.Model }}</td>
-          <td>{{ motorbike.Category }}</td>
+        <tr *ngFor="let bike of motorbikes">
+          <td>{{ bike.regNumber }}</td>
+          <td>{{ bike.brand }}</td>
+          <td>{{ bike.model }}</td>
+          <td>{{ bike.category }}</td>
           <td>
             <img
-              *ngIf="motorbike.Image; else noImage"
-              [src]="motorbike.Image"
+              *ngIf="bike.Image; else noImage"
+              [src]="bike.Image"
               alt="Motorbike Image"
               class="img-thumbnail"
               style="width: 100px; height: 75px;"
@@ -30,7 +30,7 @@
             <ng-template #noImage>No image</ng-template>
           </td>
           <td>
-            <button class="btn btn-primary" (click)="requestRental(motorbike.Id)">
+            <button class="btn btn-primary" (click)="requestRental(bike.Id)">
               Request Rental
             </button>
           </td>
@@ -39,3 +39,9 @@
     </table>
   </div>
   
+  <tr *ngFor="let bike of motorbikes">
+    <td>{{ bike.regNumber }}</td>
+    <td>{{ bike.brand }}</td>
+    <td>{{ bike.model }}</td>
+    <td>{{ bike.category }}</td>
+    <td><img [src]="bike.imageUrl" alt="Bike Image" width="50"></td>

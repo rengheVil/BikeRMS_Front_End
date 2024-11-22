@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
+import { RentalService } from "../../services/rental.service";
 import { Router } from '@angular/router';
 
 
@@ -13,7 +14,7 @@ export class CusavailableBikesComponent implements OnInit{
 
   motorbikes: any[] = [];
 
-  constructor(private bikeService: BikeService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService ) {}
 
   ngOnInit(): void {
     this.loadMotorbikes();
@@ -27,8 +28,9 @@ export class CusavailableBikesComponent implements OnInit{
 
   requestRental(motorbikeId: number): void {
     const customer = 'TestCustomer'; 
-    this.bikeService.requestRental(motorbikeId, customer).subscribe((response) => {
+    this.rentalService.requestRental(motorbikeId, customer).subscribe((response) => {
       alert(response.Message);
     });
   }
+
 }

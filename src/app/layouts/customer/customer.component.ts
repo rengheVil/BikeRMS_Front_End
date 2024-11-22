@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RentalService } from "../../services/rental.service";
 import {  } from "module";
 
 

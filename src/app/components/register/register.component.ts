@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BikeService } from "../../services/bike.service";
+import { RentalService } from "../../services/rental.service";
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent {
   registerForm!: FormGroup;
   message: string = '';
 
-  constructor(private fb: FormBuilder, private bikeService: BikeService) {
+  constructor(private fb: FormBuilder, private bikeService: BikeService, private rentalService: RentalService) {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -23,7 +24,7 @@ export class RegisterComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      this.bikeService.register(this.registerForm.value).subscribe({
+      this.rentalService.register(this.registerForm.value).subscribe({
         next: (response) => {
           this.message = response.Message;
         },
@@ -35,4 +36,6 @@ export class RegisterComponent {
       this.message = 'Please fill in all required fields.';
     }
   }
+
+  
 }

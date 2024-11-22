@@ -1,0 +1,35 @@
+
+
+
+<br><br>
+<div class="container">
+    <h2>Available Motorbikes</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th> Username</th>
+          <th> Password</th>
+          <th> NIC Number</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.Username }}</td>
+          <td>{{ customer.Password }}</td>
+          <td>{{ customer.NIC }}</td>
+          
+          <td>
+            <button class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
+            <button class="btn btn-danger" (click)="onDelete(customer.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<!--   (click)="selected=bike"  -->
+
+
+
+

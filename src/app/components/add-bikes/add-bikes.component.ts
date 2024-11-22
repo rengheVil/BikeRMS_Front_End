@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { BikeService } from '../../services/bike.service';
+
 import { Router } from '@angular/router';
 import { Bike } from '../../Models/Bike';
 //import { ToastrService } from 'ngx-toastr';  private toastr: ToastrService,
@@ -16,6 +17,7 @@ export class AddBikesComponent  {
 
   addBikeForm: any;
   bike!: Bike;
+  selectedFile: File | null = null;
 
   constructor(private fb: FormBuilder, private bikeService: BikeService, private router: Router) {
     this.addBikeForm = this.fb.group({
@@ -23,7 +25,7 @@ export class AddBikesComponent  {
       brand: [''],
       model: [''],
       category: ['', [Validators.required]],
-      bikeImage : ['']
+      bikeImage : [null]
     });
   }
 
@@ -38,6 +40,12 @@ export class AddBikesComponent  {
     })
   }
 
+  onFileChange(file: File | null): void {
+    if (file) {
+      this.selectedFile = file;
+      this.addBikeForm.patchValue({ bikeImage: file });
+    }
+  }
 
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RentalService } from "../../services/rental.service";
 
 @Component({
   selector: 'app-manager',

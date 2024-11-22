@@ -20,10 +20,12 @@
                     <option value="Bike">Bike</option>
                     <option value="Sport">Sport</option>
                     <option value="Touring">Touring</option>
-                </select>
+                </select> 
 
                 <label for="bikeImage" class="form-label">Bike Image: </label>
-                <input type="file" class="form-control-file" id="bikeImage" formControlName="bikeImage" accept="image/*" > <br>
+             <!-- <input type="file" class="form-control-file" id="bikeImage" formControlName="bikeImage" accept="image/*" (change)="onFileChange(fileInput.files ? fileInput.files[0] : null)"> <br> -->
+                
+                <br>
 
                 <button type="submit" class="btn btn-primary mt-3" >Submit</button>
 

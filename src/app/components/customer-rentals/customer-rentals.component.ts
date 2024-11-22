@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
+import { RentalService } from "../../services/rental.service";
 
 @Component({
   selector: 'app-customer-rentals',
@@ -10,14 +11,14 @@ export class CustomerRentalsComponent implements OnInit {
 
   rentals: any[] = [];
 
-  constructor(private bikeService: BikeService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
 
   ngOnInit(): void {
     this.loadRentals();
   }
 
   loadRentals(): void {
-    this.bikeService.getRentals().subscribe(
+    this.rentalService.getRentals().subscribe(
       (data) => {
         this.rentals = data;
       },
