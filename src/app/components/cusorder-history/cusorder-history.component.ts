@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
+import { RentalService } from "../../services/rental.service";
 
 @Component({
   selector: 'app-cusorder-history',
@@ -12,10 +13,10 @@ export class CusorderHistoryComponent implements OnInit{
 
   orderHistory: any[] = [];
 
-  constructor(private bikeService: BikeService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
 
   ngOnInit(): void {
-    this.bikeService.getOrderHistory().subscribe((data) => {
+    this.rentalService.getOrderHistory().subscribe((data) => {
       this.orderHistory = data;
     });
   }

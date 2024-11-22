@@ -17,10 +17,12 @@ import { CusmyRentalsComponent } from './components/cusmy-rentals/cusmy-rentals.
 import { CusmyrentalRequestsComponent } from './components/cusmyrental-requests/cusmyrental-requests.component';
 import { MorderHistoryComponent } from './components/morder-history/morder-history.component';
 import { CusorderHistoryComponent } from './components/cusorder-history/cusorder-history.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import {  HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MeditBikeComponent } from './components/medit-bike/medit-bike.component';
+import { McustomerDetailComponent } from './components/mcustomer-detail/mcustomer-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CommonModule } from '@angular/common';
     CusmyrentalRequestsComponent,
     MorderHistoryComponent,
     CusorderHistoryComponent,
+    MeditBikeComponent,
+    McustomerDetailComponent,
     
   ],
   imports: [
@@ -48,7 +52,8 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [
     provideClientHydration(), provideHttpClient(),
