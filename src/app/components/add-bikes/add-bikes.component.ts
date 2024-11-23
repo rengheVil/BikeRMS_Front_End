@@ -1,9 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject} from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { BikeService } from '../../services/bike.service';
 
 import { Router } from '@angular/router';
-import { Bike } from '../../Models/Bike';
+import { AddBike, Bike } from '../../Models/Bike';
+import { ToastrService } from 'ngx-toastr';
+import { error } from 'console';
 //import { ToastrService } from 'ngx-toastr';  private toastr: ToastrService,
 
 
@@ -16,8 +18,9 @@ import { Bike } from '../../Models/Bike';
 export class AddBikesComponent  {
 
   addBikeForm: any;
-  bike!: Bike;
+  bike!: AddBike;
   selectedFile: File | null = null;
+  // toster = inject(ToastrService)
 
   constructor(private fb: FormBuilder, private bikeService: BikeService, private router: Router) {
     this.addBikeForm = this.fb.group({
@@ -25,7 +28,7 @@ export class AddBikesComponent  {
       brand: [''],
       model: [''],
       category: ['', [Validators.required]],
-      bikeImage : [null]
+      imageData : [null]
     });
   }
 
@@ -34,16 +37,16 @@ export class AddBikesComponent  {
   onAddBike() {
     console.log(this.addBikeForm.value)
     this.bike = (this.addBikeForm.value);
-    this.bikeService.createbike(this.bike).subscribe(data => {
-      // this.toastr.success("successfully added", "Success")
-      this.router.navigate(['/availableBike']);
+    console.log(this.bike)
+    this.bikeService.CreateBike1(this.bike).subscribe({
+      next:res => console.log(res + "added succss")
     })
   }
 
   onFileChange(file: File | null): void {
     if (file) {
       this.selectedFile = file;
-      this.addBikeForm.patchValue({ bikeImage: file });
+      this.addBikeForm.patchValue({ imageData: file });
     }
   }
 

@@ -28,7 +28,7 @@ export class AvailableBikesComponent implements OnInit {
     this.bikeService.getMotorbikes().subscribe(
       (data) => (this.motorbikes = data , console.log(data)),
       (error) => console.error(error)
-    );
+    );    
   }
 
   onUpdate(bike: any): void {
