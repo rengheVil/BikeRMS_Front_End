@@ -1,0 +1,108 @@
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+} */
+
+/* Header Styling */
+h2 {
+    text-align: center;
+    color: #ff4757; /* Modern red tone */
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* Label Styling */
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* Input and Select Styling */
+input[type="text"], 
+select, 
+input[type="file"] {
+    margin-top: 8px;
+    padding: 12px 15px;
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fefefe;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, 
+select:focus, 
+input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* File Input Customization */
+input[type="file"] {
+    padding: 8px;
+    background-color: #f1f1f1;
+    border: 1px dashed #dcdcdc;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}

@@ -33,9 +33,9 @@ export class LoginComponent {
 
           // Navigate to role-specific dashboard
           if (response.Role === 'admin' ) {
-            this.router.navigate(['/Manager']);
-          } else {
             this.router.navigate(['/Customer']);
+          } else {
+            this.router.navigate(['/Manager']);
           }
         },
         error: (err) => {

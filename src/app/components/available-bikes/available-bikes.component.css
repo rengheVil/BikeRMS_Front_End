@@ -1,4 +1,4 @@
-table {
+/* table {
     width: 100%;
     border-collapse: collapse;
   }
@@ -17,4 +17,143 @@ table {
   button {
     margin: 0 5px;
   }
-  
+   */
+
+   /* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+h2 {
+  text-align: center;
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+table thead tr {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Image Styling */
+table img {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Button Styling */
+button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-footer {
+  border-top: 1px solid #ddd;
+}
+
+/* Close Button */
+.modal-header .btn-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-header .btn-close:hover {
+  color: #f8d7da;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  table th, table td {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 12px;
+      padding: 6px 10px;
+  }
+}
+
+

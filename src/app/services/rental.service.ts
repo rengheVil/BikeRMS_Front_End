@@ -13,10 +13,10 @@ export class RentalService {
 
   constructor(private http : HttpClient) { }
 
-  private apiUrl = 'https://localhost:7178/api/Motorbike';
-  private apiUrlCus ='https://localhost:7178/api/User';
-  private apireq = 'https://localhost:7178/api/RentalRequest';
-  private apirental = 'https://localhost:7178/api/Rental';
+  private apiUrl =     'https://localhost:7178/api/Motorbike';
+  private apiUrlCus =  'https://localhost:7178/api/User';
+  private apireq =     'https://localhost:7178/api/RentalRequest';
+  private apirental =  'https://localhost:7178/api/Rental';
 
 
     // register 

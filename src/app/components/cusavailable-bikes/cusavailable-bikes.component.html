@@ -20,13 +20,8 @@
           <td>{{ bike.model }}</td>
           <td>{{ bike.category }}</td>
           <td>
-            <img
-              *ngIf="bike.Image; else noImage"
-              [src]="bike.Image"
-              alt="Motorbike Image"
-              class="img-thumbnail"
-              style="width: 100px; height: 75px;"
-            />
+           <img     [src]="'data:image/png;base64,' + bike.imageData" 
+            alt="Bike Image" width="50">
             <ng-template #noImage>No image</ng-template>
           </td>
           <td>

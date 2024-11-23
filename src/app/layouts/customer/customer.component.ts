@@ -10,4 +10,8 @@ import {  } from "module";
 })
 export class CustomerComponent {
 
+  logout() {
+    alert('You have logged out!');
+    // Add actual logout functionality here
+  }
 }
