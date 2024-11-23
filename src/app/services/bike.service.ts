@@ -1,16 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { Bike } from '../Models/Bike';
+import { AddBike, Bike } from '../Models/Bike';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BikeService {
-
   constructor(private http : HttpClient) { }
 
   private apiUrl = 'https://localhost:7178/api/Motorbike';
+
+  CreateBike1(Data:AddBike){
+    console.log(Data.brand)
+    return this.http.post(`https://localhost:7178/api/Motorbike?RegNumber=${Data.regNumber}&Brand=${Data.brand}&Model=${Data.model}&Category=${Data.category}`,Data)
+  }
 
     createbike(bike :Bike){
       return this.http.post("https://localhost:7178/api/Motorbike" , bike)

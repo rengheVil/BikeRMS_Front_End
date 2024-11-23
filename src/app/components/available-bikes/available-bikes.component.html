@@ -21,8 +21,10 @@
           <td>{{ bike.regNumber }}</td>
           <td>{{ bike.brand }}</td>
           <td>{{ bike.model }}</td>
-          <td>{{ bike.category }}</td>
-          <td><img [src]="bike.imageUrl" alt="Bike Image" width="50"></td>
+          <td>{{ bike.category }} </td>
+        
+          <td><img     [src]="'data:image/png;base64,' + bike.imageData" 
+            alt="Bike Image" width="50"></td>
           <td>
             <button class="btn btn-primary" (click)="selected=bike"  data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
             <button class="btn btn-danger" (click)="onDelete(bike.id)">Delete</button>
