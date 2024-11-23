@@ -16,13 +16,16 @@ import { ManagerComponent } from './layouts/manager/manager.component';
 
 const routes: Routes = [
 
-   { path: 'Manager' , component: ManagerComponent},
+   { path: 'Manager' , component: ManagerComponent , 
+   children : [
+        { path: 'addBike', component: AddBikesComponent },
+      { path: 'MrentalRequest' , component: MrentalRequestComponent},
+      { path: 'MordHistory' , component: MorderHistoryComponent},
+      { path: 'availableBike', component: AvailableBikesComponent},
+      { path: 'cusRental', component:CustomerRentalsComponent},
+      ]},
   
-   { path: 'addBike', component: AddBikesComponent },
-   { path: 'MrentalRequest' , component: MrentalRequestComponent},
-   { path: 'MordHistory' , component: MorderHistoryComponent},
-   { path: 'availableBike', component: AvailableBikesComponent},
-   { path: 'cusRental', component:CustomerRentalsComponent},
+  
   
    { path: 'Customer' , component:CustomerComponent},
 
@@ -31,7 +34,7 @@ const routes: Routes = [
    { path: 'CusmyrentalRequest' , component: CusmyrentalRequestsComponent},
    { path: 'CusorderHistory' , component:CusorderHistoryComponent},
 
-   { path: 'Login' , component: LoginComponent},
+   { path: '' , component: LoginComponent},
    { path: 'Register', component: RegisterComponent}
    
 

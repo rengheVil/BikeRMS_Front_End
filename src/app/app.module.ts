@@ -23,6 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MeditBikeComponent } from './components/medit-bike/medit-bike.component';
 import { McustomerDetailComponent } from './components/mcustomer-detail/mcustomer-detail.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,8 +55,15 @@ import { McustomerDetailComponent } from './components/mcustomer-detail/mcustome
     FormsModule,
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ToastrModule.forRoot({
+      timeOut: 3000, // Default toast timeout
+      positionClass: 'toast-top-right', // Position of the toast
+      preventDuplicates: true, // Prevent duplicate toasts
+    }),
+    BrowserAnimationsModule
   ],
+  
   providers: [
     provideClientHydration(), provideHttpClient(),
   ],

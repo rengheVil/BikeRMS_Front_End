@@ -23,7 +23,7 @@
                 </select> 
 
                 <label for="bikeImage" class="form-label">Bike Image: </label>
-             <input type="file" class="form-control-file" id="bikeImage" formControlName="imageData" accept="image/*" > <br>
+             <input type="file" class="form-control-file" id="bikeImage" formControlName="imageData" accept="image/*" (change)="onFileChange($event)"> <br>
                 
                 <br>
 

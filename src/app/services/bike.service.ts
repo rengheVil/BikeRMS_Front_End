@@ -11,9 +11,9 @@ export class BikeService {
 
   private apiUrl = 'https://localhost:7178/api/Motorbike';
 
-  CreateBike1(Data:AddBike){
-    console.log(Data.brand)
-    return this.http.post(`https://localhost:7178/api/Motorbike?RegNumber=${Data.regNumber}&Brand=${Data.brand}&Model=${Data.model}&Category=${Data.category}`,Data)
+  CreateBike1(Data:FormData){
+
+    return this.http.post('https://localhost:7178/api/Motorbike', Data)
   }
 
     createbike(bike :Bike){
