@@ -41,23 +41,55 @@ h2 {
 }
 
 /* Table Styling */
-table {
+/* table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 16px;
   text-align: left;
-}
+} */
 
-table thead tr {
-  background-color: #007bff; /* Bootstrap primary color */
+/* .table thead.thead-dark th {
+  background-color: #007bff;
   color: white;
-}
+  text-transform: uppercase;
+  font-weight: bold;
+} */
 
-table th, table td {
+/* table thead tr {
+  background-color: #007bff; 
+  
+
+*/
+/* table th, table td {
   padding: 12px 15px;
   border: 1px solid #ddd;
   vertical-align: middle;
+} */
+
+
+
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 12px;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 table tbody tr:nth-child(even) {

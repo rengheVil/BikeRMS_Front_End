@@ -59,7 +59,7 @@ export class RentalService {
     }
 
     requestRental(motorbikeId: number, customer: string): Observable<any> {
-      return this.http.post(`${this.apireq}/rental-request`, {
+      return this.http.post(`${this.apireq}`, {
         MotorbikeId: motorbikeId,
         Customer: customer,
 

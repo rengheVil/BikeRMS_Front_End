@@ -1,4 +1,13 @@
 
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 /* order-history.component.css */
 .order-history {
@@ -10,10 +19,10 @@
     border-collapse: collapse;
   }
   
-  thead {
-    background-color: #007bff;
-    color: #fff;
-  }
+  /* thead {
+    background-color: #007bff; 
+     color: #fff;
+  } */
   
   th, td {
     padding: 10px;

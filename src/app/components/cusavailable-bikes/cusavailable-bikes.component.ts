@@ -20,9 +20,16 @@ export class CusavailableBikesComponent implements OnInit{
     this.loadMotorbikes();
   }
 
+  // loadMotorbikes(): void {
+  //   this.bikeService.getMotorbikes().subscribe((data) => {
+  //     this.motorbikes = data;
+  //   });
+  // }
+
   loadMotorbikes(): void {
     this.bikeService.getMotorbikes().subscribe((data) => {
-      this.motorbikes = data;
+      // Filter out bikes that are already requested
+      this.motorbikes = data.filter((bike: any) => !bike.isRequested);
     });
   }
 
@@ -30,7 +37,10 @@ export class CusavailableBikesComponent implements OnInit{
     const customer = 'TestCustomer'; 
     this.rentalService.requestRental(motorbikeId, customer).subscribe((response) => {
       alert(response.Message);
+      this.loadMotorbikes();
     });
   }
+
+  
 
 }
