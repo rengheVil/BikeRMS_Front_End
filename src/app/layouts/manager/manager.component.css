@@ -1,4 +1,4 @@
-.Bike-management {
+/* .Bike-management {
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
@@ -139,4 +139,165 @@
   }
 
 
-   
+    */
+/* General Layout */
+.Bike-management {
+  display: flex;
+  height: 100vh; /* Ensures the layout spans the entire viewport height */
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  height: 100vh; /* Sidebar explicitly spans the full viewport height */
+  position: sticky; /* Keeps the sidebar fixed during scroll */
+  top: 0;
+  display: flex;
+  flex-direction: column; /* Allows alignment of content inside */
+  justify-content: space-between; /* Ensures footer stays at the bottom */
+}
+
+/* Sidebar Content */
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #007bff;
+  padding: 10px;
+}
+/* Main Content Area */
+.content {
+  flex: 1; /* Content takes the remaining space */
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-y: auto; /* Allows scrolling for content overflow */
+}
+
+/* Top Bar in Main Content */
+.content .top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.content .top-bar .search-input {
+  padding: 8px;
+  width: 200px;
+  margin-right: 5px;
+}
+
+.content .top-bar .search-button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.content .top-bar .search-button:hover {
+  background-color: #555;
+}
+
+/* User Management Section */
+ /* 
+ .section{
+ width: 70%; 
+  height: 100%;
+}*/
+.content .user-management {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content .user-management h3 {
+  margin-top: 0;
+}
+
+.content .user-management .search-user {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.content .user-management .new-user-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+
+.content .user-management .new-user-button:hover {
+  background-color: #218838;
+}
+
+/* User Table */
+.content .user-management .user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.content .user-management .user-table th,
+.content .user-management .user-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.content .user-management .user-table th {
+  background-color: #f1f1f1;
+}
+
+/* Buttons in Table */
+.content .user-management .user-table .btn {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+.content .user-management .user-table .btn.edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.content .user-management .user-table .btn.edit:hover {
+  background-color: #0056b3;
+}
+
+.content .user-management .user-table .btn.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.content .user-management .user-table .btn.delete:hover {
+  background-color: #c82333;
+}

@@ -19,24 +19,23 @@ const routes: Routes = [
    { path: 'Manager' , component: ManagerComponent , 
    children : [
         { path: 'addBike', component: AddBikesComponent },
-      { path: 'MrentalRequest' , component: MrentalRequestComponent},
-      { path: 'MordHistory' , component: MorderHistoryComponent},
-      { path: 'availableBike', component: AvailableBikesComponent},
-      { path: 'cusRental', component:CustomerRentalsComponent},
+        { path: 'MrentalRequest' , component: MrentalRequestComponent},
+        { path: 'MordHistory' , component: MorderHistoryComponent},
+        { path: 'availableBike', component: AvailableBikesComponent},
+        { path: 'cusRental', component:CustomerRentalsComponent},
       ]},
   
   
+   { path: 'Customer' , component:CustomerComponent,
+    children : [
+        { path: 'CusavaiBikes' , component: CusavailableBikesComponent },
+        { path: 'CusmyRentals', component: CusmyRentalsComponent},
+        { path: 'CusmyrentalRequest' , component: CusmyrentalRequestsComponent},
+        { path: 'CusorderHistory' , component:CusorderHistoryComponent},
+    ]},
   
-   { path: 'Customer' , component:CustomerComponent},
-
-   { path: 'CusavaiBikes' , component: CusavailableBikesComponent },
-   { path: 'CusmyRentals', component: CusmyRentalsComponent},
-   { path: 'CusmyrentalRequest' , component: CusmyrentalRequestsComponent},
-   { path: 'CusorderHistory' , component:CusorderHistoryComponent},
-
    { path: '' , component: LoginComponent},
    { path: 'Register', component: RegisterComponent}
-   
 
 ];
 

@@ -27,16 +27,21 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.rentalService.login(this.loginForm.value).subscribe({
         next: (response) => {
-          localStorage.setItem('token', response.Token); 
-          localStorage.setItem('role', response.Role);  
-          localStorage.setItem('username', response.Username);
+          localStorage.setItem('token', response.token); 
+          localStorage.setItem('role', response.role);  
+          localStorage.setItem('username', response.username);
 
           // Navigate to role-specific dashboard
-          if (response.Role === 'admin' ) {
-            this.router.navigate(['/Customer']);
-          } else {
+          if (response.role == 'admin' ) {
             this.router.navigate(['/Manager']);
+          } 
+          // else if (response.Role == 'user' )  {
+            
+          // }
+          else {
+            this.router.navigate(['/Customer']);
           }
+
         },
         error: (err) => {
           this.message = err.error || 'Login failed';
