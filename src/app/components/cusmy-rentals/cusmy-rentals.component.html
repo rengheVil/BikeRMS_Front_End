@@ -16,11 +16,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let rental of rentals">
-          <td>{{ rental.RegNumber }}</td>
-          <td>{{ rental.Brand }}</td>
-          <td>{{ rental.Model }}</td>
-          <td>{{ rental.Category }}</td>
-          <td>{{ rental.RentDate | date:'short' }}</td>
+          <td>{{ rental.regNumber }}</td>
+          <td>{{ rental.brand }}</td>
+          <td>{{ rental.model }}</td>
+          <td>{{ rental.category }}</td>
+          <td>{{ rental.rentDate | date:'short' }}</td>
           <td>
             <button class="btn btn-danger" (click)="returnRental(rental.Id)">
               Return

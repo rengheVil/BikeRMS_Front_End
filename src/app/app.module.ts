@@ -25,6 +25,7 @@ import { MeditBikeComponent } from './components/medit-bike/medit-bike.component
 import { McustomerDetailComponent } from './components/mcustomer-detail/mcustomer-detail.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StartPageComponent } from './components/start-page/start-page.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CusorderHistoryComponent,
     MeditBikeComponent,
     McustomerDetailComponent,
+    StartPageComponent,
     
   ],
   imports: [

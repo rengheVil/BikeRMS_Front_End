@@ -1,5 +1,56 @@
 <br><br>
 
+
+    
+     <div class="container mt-3">
+      <h2>Available Motorbikes</h2>
+
+        <!-- Search Bar -->
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by brand, model, or category"
+      [(ngModel)]="searchTerm"
+      (input)="filterBikes()"
+    />
+  </div>
+
+
+  <br>
+
+      <div class="row">
+        <div *ngFor="let bike of motorbikes" class="col-md-4 mb-4">
+          <div class="card" style="height: 100%; text-align: center;">
+            <img 
+              *ngIf="bike.imageData; else noImage" 
+              [src]="'data:image/png;base64,' + bike.imageData" 
+              class="card-img-top" 
+              alt="Bike Image" 
+              style="width: 100%; height: 200px; object-fit: cover;">
+            <ng-template #noImage>
+              <img 
+                src="placeholder.jpg" 
+                class="card-img-top" 
+                alt="No Image Available" 
+                style="width: 100%; height: 200px; object-fit: cover;">
+            </ng-template>
+            <div class="card-body">
+              <h5 class="card-title">{{ bike.brand }} - {{ bike.model }}</h5>
+              <p class="card-text">
+                <strong>Category:</strong> {{ bike.category }}<br>
+                <strong>Reg. Number:</strong> {{ bike.regNumber }}
+              </p>
+              <button class="btn btn-primary" (click)="requestRental(bike.id)">
+                Request Rental
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
 <div class="container mt-3">
     <h2>Available Motorbikes</h2>
     <table class="table table-bordered table-striped">
@@ -25,7 +76,7 @@
             <ng-template #noImage>No image</ng-template>
           </td>
           <td>
-            <button class="btn btn-primary" (click)="requestRental(bike.Id)">
+            <button class="btn btn-primary" (click)="requestRental(bike.id)">
               Request Rental
             </button>
           </td>
@@ -40,3 +91,80 @@
     <td>{{ bike.model }}</td>
     <td>{{ bike.category }}</td>
     <td><img [src]="bike.imageUrl" alt="Bike Image" width="50"></td>
+
+   
+
+     <!-- <div class="container mt-3">
+      <h2>Available Motorbikes</h2>
+      <div class="row">
+        <div *ngFor="let bike of motorbikes" class="col-md-4 mb-4">
+          <div class="card">
+            <img 
+              *ngIf="bike.imageData; else noImage" 
+              [src]="'data:image/png;base64,' + bike.imageData" 
+              class="card-img-top" 
+              alt="Bike Image">
+            <ng-template #noImage>
+              <img src="placeholder.jpg" class="card-img-top" alt="No Image Available">
+            </ng-template>
+            <div class="card-body">
+              <h5 class="card-title">{{ bike.brand }} - {{ bike.model }}</h5>
+              <p class="card-text">
+                <strong>Category:</strong> {{ bike.category }}<br>
+                <strong>Reg. Number:</strong> {{ bike.regNumber }}
+              </p>
+              <button class="btn btn-primary" (click)="requestRental(bike.Id)">
+                Request Rental
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     -->
+
+     <!-- <div class="container mt-3">
+      <h2>Available Motorbikes</h2>
+    
+      Search Bar -->
+      <!-- <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by brand, model, or category"
+          [(ngModel)]="searchTerm"
+          (input)="filterBikes()"
+        />
+      </div>
+    
+     Motorbike Cards -->
+       <!-- <div class="row">
+        <div *ngFor="let bike of filteredMotorbikes" class="col-md-4 mb-4">
+          <div class="card" style="height: 100%; text-align: center;">
+            <img 
+              *ngIf="bike.imageData; else noImage" 
+              [src]="'data:image/png;base64,' + bike.imageData" 
+              class="card-img-top" 
+              alt="Bike Image" 
+              style="width: 100%; height: 200px; object-fit: cover;">
+            <ng-template #noImage>
+              <img 
+                src="placeholder.jpg" 
+                class="card-img-top" 
+                alt="No Image Available" 
+                style="width: 100%; height: 200px; object-fit: cover;">
+            </ng-template>
+            <div class="card-body">
+              <h5 class="card-title">{{ bike.brand }} - {{ bike.model }}</h5>
+              <p class="card-text">
+                <strong>Category:</strong> {{ bike.category }}<br>
+                <strong>Reg. Number:</strong> {{ bike.regNumber }}
+              </p>
+              <button class="btn btn-primary" (click)="requestRental(bike.Id)">
+                Request Rental
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->

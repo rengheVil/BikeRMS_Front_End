@@ -15,7 +15,7 @@ export class RentalService {
 
   private apiUrl =     'https://localhost:7178/api/Motorbike';
   private apiUrlCus =  'https://localhost:7178/api/User';
-  private apireq =     'https://localhost:7178/api/RentalRequest';
+  private apirequest =     'https://localhost:7178/api/RentalRequest';
   private apirental =  'https://localhost:7178/api/Rental';
 
 
@@ -49,19 +49,23 @@ export class RentalService {
       return this.http.get<any[]>(this.apirental);
     }
 
-    getRentalRequests(): Observable<any> {
-      return this.http.get(this.apireq);
+    getRentalRequests(): Observable<any[]> {
+      return this.http.get<any[]>(this.apirequest);
     }
+    // getRentalRequests(): Observable<any> {
+    //   return this.http.get(this.apirequest);
+    // }
   
     //mrentalRequests
     updateRequestStatus(id: number, status: string): Observable<any> {
       return this.http.put(`${this.apiUrl}/${id}`, { status });
     }
 
-    requestRental(motorbikeId: number, customer: string): Observable<any> {
-      return this.http.post(`${this.apireq}`, {
+    requestRental(motorbikeId: number, userId: number, requestDate:Date): Observable<any> {
+      return this.http.post(`${this.apirequest}`, {
         MotorbikeId: motorbikeId,
-        Customer: customer,
+        UserId: userId,
+        RequestDate: requestDate
 
       });
     }

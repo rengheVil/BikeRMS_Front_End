@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,7 +15,9 @@ export class CusavailableBikesComponent implements OnInit{
 
   motorbikes: any[] = [];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService ) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService, private fb: FormBuilder ) {
+
+  }
 
   ngOnInit(): void {
     this.loadMotorbikes();
@@ -27,20 +30,42 @@ export class CusavailableBikesComponent implements OnInit{
   // }
 
   loadMotorbikes(): void {
+ 
     this.bikeService.getMotorbikes().subscribe((data) => {
+      console.log(data)
       // Filter out bikes that are already requested
       this.motorbikes = data.filter((bike: any) => !bike.isRequested);
     });
   }
 
   requestRental(motorbikeId: number): void {
-    const customer = 'TestCustomer'; 
-    this.rentalService.requestRental(motorbikeId, customer).subscribe((response) => {
+    const customer = 1; 
+    console.log(motorbikeId);
+    const userId = 1;
+    let requestDate = new Date;
+    this.rentalService.requestRental(motorbikeId, userId, requestDate).subscribe((response) => {
       alert(response.Message);
       this.loadMotorbikes();
     });
   }
 
+
+  // search function 
+
+  searchTerm: string = '';
+
+  // Filtered list of motorbikes
+  filteredMotorbikes = this.motorbikes;
+
+  // Filter function
+  filterBikes() {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredMotorbikes = this.motorbikes.filter(bike =>
+      bike.brand.toLowerCase().includes(term) ||
+      bike.model.toLowerCase().includes(term) ||
+      bike.category.toLowerCase().includes(term)
+    );
+  }
   
 
 }

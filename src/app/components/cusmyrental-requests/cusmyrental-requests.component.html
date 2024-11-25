@@ -18,12 +18,24 @@
           *ngFor="let request of rentalRequests"
           [ngClass]="{ 'table-success': request.Status === 'approved', 'table-warning': request.Status === 'pending' }"
         >
-          <td>{{ request.RegNumber }}</td>
-          <td>{{ request.Brand }}</td>
-          <td>{{ request.Model }}</td>
-          <td>{{ request.Category }}</td>
-          <td>{{ request.RequestDate | date: 'short' }}</td>
-          <td>{{ request.Status }}</td>
+          <td>{{ request.regNumber }}</td>
+          <td>{{ request.brand }}</td>
+          <td>{{ request.model }}</td>
+          <td>{{ request.category }}</td>
+          <td>{{ request.requestDate | date: 'short' }}</td>
+          <td>{{ request.status }}</td>
+
+
+          <!-- {
+            "id": 4,
+            "motorbike": null,
+            "motorbikeId": 2,
+            "user": null,
+            "userId": 2,
+            "requestDate": "2024-11-25T06:25:35.9442371Z",
+            "status": "Pending",
+            "approvalDate": "0001-01-01T00:00:00"
+          } -->
         </tr>
       </tbody>
     </table>
