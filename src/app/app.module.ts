@@ -26,6 +26,8 @@ import { McustomerDetailComponent } from './components/mcustomer-detail/mcustome
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StartPageComponent } from './components/start-page/start-page.component';
+import { ZaboutComponent } from './components/zabout/zabout.component';
+import { CviewRequestComponent } from './components/cview-request/cview-request.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { StartPageComponent } from './components/start-page/start-page.component
     MeditBikeComponent,
     McustomerDetailComponent,
     StartPageComponent,
+    ZaboutComponent,
+    CviewRequestComponent,
     
   ],
   imports: [

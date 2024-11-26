@@ -1,0 +1,11 @@
+
+
+  
+.bg-color{
+  background-size:cover; 
+     /* background-image:url('../../../../public/img1.jpeg');  */
+    background-position:50% 50%; 
+    background-color:RGB(34, 140, 220);height:auto;width:auto;
+    background-color: lightblue;
+
+}

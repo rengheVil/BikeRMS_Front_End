@@ -16,3 +16,16 @@ export interface Rental {
     userId:string
    
 }
+
+export interface RentalRequest {
+motorbike: any;
+    id: number;
+    customer: string;
+    regNumber: string;
+    brand: string;
+    model: string;
+    requestDate: string;
+    category:string;
+    status: string;
+  }
+  
