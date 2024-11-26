@@ -22,12 +22,15 @@
           <td >{{ request?.motorbike.brand }}</td>
           <td>{{ request?.motorbike.model }}</td>
           <td>{{ request.requestDate | date:'short' }}</td>
-          <td>{{ request.status }}</td>
+          <td [ngClass]="{
+            'text-success': request.status === 'approved',
+            'text-danger': request.status === 'pending'
+          }"> {{ request.status }}</td>
           <td>
             <button
               class="btn btn-success"
               *ngIf="request.status === 'pending'"
-              (click)="approveRequest(request.Id)">    Approve   </button>
+              (click)="approveRequest(request.id)">    Approve   </button>
             
               
           </td>

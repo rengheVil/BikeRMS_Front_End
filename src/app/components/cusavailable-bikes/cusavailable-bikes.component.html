@@ -76,7 +76,7 @@
             <ng-template #noImage>No image</ng-template>
           </td>
           <td>
-            <button class="btn btn-primary" (click)="requestRental(bike.id)">
+            <button class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="requestRental(bike.id)">
               Request Rental
             </button>
           </td>
@@ -93,6 +93,28 @@
     <td><img [src]="bike.imageUrl" alt="Bike Image" width="50"></td>
 
    
+
+
+    <!-- Modal (click)="selected=bike"-->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Update </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+      <!-- <div class="modal-body" *ngIf="selected">
+        
+       <app-medit-bike [bikeData]="selected"></app-medit-bike> -->
+
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div> -->
+
+
 
      <!-- <div class="container mt-3">
       <h2>Available Motorbikes</h2>

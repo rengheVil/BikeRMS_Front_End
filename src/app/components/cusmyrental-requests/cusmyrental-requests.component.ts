@@ -1,6 +1,8 @@
 import { Component , OnInit } from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
+import { RentalRequest } from '../../Models/Rental';
+import { log } from 'console';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { RentalService } from "../../services/rental.service";
 })
 export class CusmyrentalRequestsComponent implements OnInit{
 
-  rentalRequests: any[] = [];
+  rentalRequests: RentalRequest[] = [];
 
   constructor(private bikeService: BikeService , private rentalService: RentalService) {}
 
@@ -19,8 +21,10 @@ export class CusmyrentalRequestsComponent implements OnInit{
   }
 
   loadRentalRequests(): void {
-    this.rentalService.getRentalRequests().subscribe((data) => {
+    this.rentalService.getRentalRequests().subscribe(data => {
       this.rentalRequests = data;
+      console.log(data);
+      
     });
   }
 }

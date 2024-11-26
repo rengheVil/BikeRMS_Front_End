@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CustomerComponent } from './layouts/customer/customer.component';
 import { ManagerComponent } from './layouts/manager/manager.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
+import { ZaboutComponent } from './components/zabout/zabout.component';
 
 const routes: Routes = [
 
@@ -36,8 +37,10 @@ const routes: Routes = [
     ]},
   
    { path: '' , component: LoginComponent},
-   { path: 'Register', component: RegisterComponent},
-   { path: 'start' , component: StartPageComponent}
+   { path: 'Register', component: RegisterComponent}
+
+  // { path: 'start' , component: StartPageComponent},
+  // { path: 'about', component: ZaboutComponent}
 
 ];
 

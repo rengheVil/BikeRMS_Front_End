@@ -19,6 +19,7 @@ export class RentalService {
   private apirental =  'https://localhost:7178/api/Rental';
 
 
+
     // register 
     register(user: User): Observable<any> {
       console.log(user)
@@ -46,19 +47,22 @@ export class RentalService {
 
    // Get all rentals
     getRentals(): Observable<any[]> {
-      return this.http.get<any[]>(this.apirental);
+      return this.http.get<any[]>(this.apirequest);
     }
 
     getRentalRequests(): Observable<any[]> {
       return this.http.get<any[]>(this.apirequest);
     }
+    getRequestById(id : number){
+      return this.http.get<any>("https://localhost:7178/api/RentalRequest/" + id)
+    }
     // getRentalRequests(): Observable<any> {
     //   return this.http.get(this.apirequest);
-    // }
+    // }https://localhost:7178/api/RentalRequest/12/status
   
-    //mrentalRequests
-    updateRequestStatus(id: number, status: string): Observable<any> {
-      return this.http.put(`${this.apiUrl}/${id}`, { status });
+    //manager rentalRequests
+    updateRequestStatus(requestId: number): Observable<any> {
+      return this.http.get(`${this.apirequest}/${requestId}/update`);
     }
 
     requestRental(motorbikeId: number, userId: number, requestDate:Date): Observable<any> {

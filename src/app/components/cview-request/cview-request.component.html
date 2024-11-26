@@ -1,0 +1,48 @@
+<!-- 
+
+
+<div class="row">
+    <div *ngFor="let bike of motorbikes" class="col-md-4 mb-4">
+      <div class="card" style="height: 100%; text-align: center;">
+        <img 
+          *ngIf="bike.imageData; else noImage" 
+          [src]="'data:image/png;base64,' + bike.imageData" 
+          class="card-img-top" 
+          alt="Bike Image" 
+          style="width: 100%; height: 200px; object-fit: cover;">
+        <ng-template #noImage>
+          <img 
+            src="placeholder.jpg" 
+            class="card-img-top" 
+            alt="No Image Available" 
+            style="width: 100%; height: 200px; object-fit: cover;">
+        </ng-template>
+        <div class="card-body">
+          <h5 class="card-title">{{ bike.brand }} - {{ bike.model }}</h5>
+          <p class="card-text">
+            <strong>Category:</strong> {{ bike.category }}<br>
+            <strong>Reg. Number:</strong> {{ bike.regNumber }}
+          </p>
+          <button class="btn btn-primary" (click)="requestRental(bike.id)">
+            Request Rental
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="addDateForm" (ngSubmit)="onDateBike()">
+    <div class="mb-3">
+      <label for="rentdate" class="form-label">Email address</label>
+      <input type="datetime" class="form-control" id="rentdate"  formControlName="rentdate">
+    </div>
+    <div class="mb-3">
+      <label for="returndate" class="form-label">return date</label>
+      <input type="datetime" class="form-control" id="returndate" formControlName="returndate">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> -->
