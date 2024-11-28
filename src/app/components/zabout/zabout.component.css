@@ -159,3 +159,35 @@
     margin: 0;
   }
   
+
+  /* mmmmmmmmmmmmmmmmmmmmmmmmm */
+  /* Set consistent card image dimensions */
+.card-img-top {
+  object-fit: cover;
+  height: 200px; /* Adjust the height as needed */
+  transition: transform 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a subtle zoom effect to the image */
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* Ensure card dimensions remain uniform */
+.card {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #007bff; /* Darken the button color */
+  color: #fff;
+}

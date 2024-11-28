@@ -17,8 +17,8 @@ export class RentalService {
   private apiUrlCus =  'https://localhost:7178/api/User';
   private apirequest =     'https://localhost:7178/api/RentalRequest';
   private apirental =  'https://localhost:7178/api/Rental';
-
-
+  
+  private approveUrl = 'https://localhost:7178/api/RentalRequest/Approvals';
 
     // register 
     register(user: User): Observable<any> {
@@ -46,8 +46,8 @@ export class RentalService {
       }
 
    // Get all rentals
-    getRentals(): Observable<any[]> {
-      return this.http.get<any[]>(this.apirequest);
+    getRentals(userId: number): Observable<any[]> {
+      return this.http.get<any[]>(`${this.approveUrl}/${userId}`);
     }
 
     getRentalRequests(): Observable<any[]> {
@@ -56,6 +56,16 @@ export class RentalService {
     getRequestById(id : number){
       return this.http.get<any>("https://localhost:7178/api/RentalRequest/" + id)
     }
+
+
+    //////
+
+    getUserApprovals(userId: number): Observable<any[]> {
+      return this.http.get<any[]>(`${this.apirequest}/Approvals/${userId}`);
+    }
+
+
+
     // getRentalRequests(): Observable<any> {
     //   return this.http.get(this.apirequest);
     // }https://localhost:7178/api/RentalRequest/12/status

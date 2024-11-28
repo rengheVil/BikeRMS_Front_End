@@ -20,9 +20,9 @@
           <td>{{ rental.motorbike.brand }}</td>
           <td>{{ rental.motorbike.model }}</td>
           <td>{{ rental.motorbike.category }}</td>
-          <td>{{ rental.motorbike.rentDate | date:'short' }}</td>
+          <td>{{ rental.rentDate| date:'short' }}</td>
           <td>
-            <button class="btn btn-danger" (click)="returnRental(rental.Id)">
+            <button class="btn btn-danger" (click)="returnRental(rental.id)">
               Return
             </button>
           </td>

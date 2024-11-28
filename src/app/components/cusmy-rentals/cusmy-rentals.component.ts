@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
+import { Rental } from '../../Models/Rental';
 
 @Component({
   selector: 'app-cusmy-rentals',
@@ -9,7 +10,7 @@ import { RentalService } from "../../services/rental.service";
 })
 export class CusmyRentalsComponent implements OnInit{
 
-  rentals: any[] = [];
+  rentals: Rental[] = [];
 
   constructor(private bikeService: BikeService, private rentalService: RentalService) {}
 
@@ -17,11 +18,23 @@ export class CusmyRentalsComponent implements OnInit{
     this.loadRentals();
   }
 
+  // loadRentals(): void {
+  
+  // }
+
   loadRentals(): void {
-    this.rentalService.getRentals().subscribe((data) => {
-      this.rentals = data;
-    });
+    let user = JSON.parse(localStorage.getItem("user") || '');
+    console.log(user);
+    this.rentalService.getUserApprovals(user.id).subscribe(
+      (data) => {
+        this.rentals = data;
+      },
+      (error) => {
+        console.error('Error fetching rentals:', error);
+      }
+    );
   }
+
 
   returnRental(rentalId: number): void {
     this.rentalService.returnRental(rentalId).subscribe((response) => {
@@ -29,4 +42,6 @@ export class CusmyRentalsComponent implements OnInit{
       this.loadRentals(); 
     });
   }
+
+
 }

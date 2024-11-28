@@ -301,3 +301,7 @@
 .content .user-management .user-table .btn.delete:hover {
   background-color: #c82333;
 }
+
+.navbar{
+  position: sticky;
+}
