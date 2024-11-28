@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { ZaboutComponent } from './components/zabout/zabout.component';
 import { CviewRequestComponent } from './components/cview-request/cview-request.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { CviewRequestComponent } from './components/cview-request/cview-request.
       positionClass: 'toast-top-right', // Position of the toast
       preventDuplicates: true, // Prevent duplicate toasts
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   
   providers: [
@@ -76,4 +77,5 @@ import { CviewRequestComponent } from './components/cview-request/cview-request.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 

@@ -27,10 +27,13 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.rentalService.login(this.loginForm.value).subscribe({
         next: (response) => {
-          localStorage.setItem('token', response.token); 
-          localStorage.setItem('role', response.role);  
-          localStorage.setItem('username', response.username);
-
+          // localStorage.setItem('token', response.token); 
+          // localStorage.setItem('role', response.role);  
+          // localStorage.setItem('username', response.username);
+          // localStorage.setItem('userId', response.UserId)
+          localStorage.setItem("user", JSON.stringify(response))
+          // localStorage.setItem("user" , J)
+        
           // Navigate to role-specific dashboard
           if (response.role == 'admin' ) {
             this.router.navigate(['/Manager']);

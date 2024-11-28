@@ -13,6 +13,7 @@ import { log } from 'console';
 export class CusmyrentalRequestsComponent implements OnInit{
 
   rentalRequests: RentalRequest[] = [];
+  userId: number = 7;
 
   constructor(private bikeService: BikeService , private rentalService: RentalService) {}
 
@@ -21,7 +22,7 @@ export class CusmyrentalRequestsComponent implements OnInit{
   }
 
   loadRentalRequests(): void {
-    this.rentalService.getRentalRequests().subscribe(data => {
+    this.rentalService.getRentals(this.userId).subscribe(data => {
       this.rentalRequests = data;
       console.log(data);
       

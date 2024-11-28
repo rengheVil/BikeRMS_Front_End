@@ -18,7 +18,7 @@
                                     <div class="col-12">
                                         <label>Username<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                                            <div class="input-group-text"> <i class="fa-solid fa-user"></i> </div>
                                             <input type="text" formControlName="username" class="form-control"
                                                 placeholder="Enter Username" />
                                                 <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
@@ -30,7 +30,7 @@
                                     <div class="col-12">
                                         <label>Password<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                            <div class="input-group-text"> <i class="fa-solid fa-lock"></i> </div>
                                             <input type="password" formControlName="password" class="form-control" placeholder="Enter Password" />
                                             <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
                                                 Password must be at least 6 characters long.
@@ -41,7 +41,7 @@
                                     <div class="col-12">
                                         <label>NIC Number<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                            <div class="input-group-text"> <i class="fa-solid fa-address-card"></i> </div>
                                             <input type="text" formControlName="nic" class="form-control" placeholder="Enter NIC Number" />
                                             <div *ngIf="registerForm.get('nic')?.invalid && registerForm.get('nic')?.touched">
                                                 NIC is required.
@@ -52,7 +52,7 @@
                                     <div class="col-12">
                                         <label>Select Role<span class="text-danger">*</span></label>
                                         <div class="input-group">
-                                            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                                            <div class="input-group-text"> <i class="fa-duotone fa-solid fa-user-group"></i> </div>
                                             <select formControlName="role" class="form-control">
                                                 <option value="" disabled>Select Role</option>
                                                 <option value="admin">Admin</option>

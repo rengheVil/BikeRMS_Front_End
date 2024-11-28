@@ -39,11 +39,13 @@ export class CusavailableBikesComponent implements OnInit{
   }
 
   requestRental(motorbikeId: number): void {
-    const customer = 1; 
+    
     console.log(motorbikeId);
-    const userId = 1;
+    let user = JSON.parse(localStorage.getItem("user") || '');
+    console.log(user);
+
     let requestDate = new Date;
-    this.rentalService.requestRental(motorbikeId, userId, requestDate).subscribe((response) => {
+    this.rentalService.requestRental(motorbikeId, user.id, requestDate).subscribe((response) => {
       alert(response.Message);
       this.loadMotorbikes();
     });

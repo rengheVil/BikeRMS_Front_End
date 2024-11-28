@@ -37,10 +37,10 @@ const routes: Routes = [
     ]},
   
    { path: '' , component: LoginComponent},
-   { path: 'Register', component: RegisterComponent}
+   { path: 'Register', component: RegisterComponent},
 
-  // { path: 'start' , component: StartPageComponent},
-  // { path: 'about', component: ZaboutComponent}
+   { path: 'start' , component: StartPageComponent},
+   { path: 'about', component: ZaboutComponent}
 
 ];
 

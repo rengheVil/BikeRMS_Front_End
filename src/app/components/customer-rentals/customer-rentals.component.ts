@@ -7,18 +7,20 @@ import { RentalService } from "../../services/rental.service";
   templateUrl: './customer-rentals.component.html',
   styleUrl: './customer-rentals.component.css'
 })
-export class CustomerRentalsComponent implements OnInit {
+export class CustomerRentalsComponent  implements OnInit{
 
   rentals: any[] = [];
 
   constructor(private bikeService: BikeService, private rentalService: RentalService) {}
 
-  ngOnInit(): void {
-    this.loadRentals();
+  ngOnInit(): void {  
+    //this.loadRentals();
   }
 
   loadRentals(): void {
-    this.rentalService.getRentals().subscribe(
+     let user = JSON.parse(localStorage.getItem("user") || '');
+    console.log(user);
+    this.rentalService.getRentals(user.id).subscribe(
       (data) => {
         this.rentals = data;
       },

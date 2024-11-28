@@ -15,16 +15,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let request of rentalRequests">
-          <td>{{ request.motorbike.regNumber }}</td>
-        <td>{{ request.motorbike.brand }}</td>
-        <td>{{ request.motorbike.model }}</td>
-        <td>{{ request.motorbike.category }}</td>
-        <td>{{ request.requestDate | date: 'short' }}</td>
-        <td>{{ request.status }}</td>
-
-
+          <td>{{ request.motorbike?.regNumber || 'N/A' }}</td>
+          <td>{{ request.motorbike?.brand || 'N/A' }}</td>
+          <td>{{ request.motorbike?.motorbikeId|| 'N/A' }}</td>
+          <td>{{ request.motorbike?.category || 'N/A' }}</td>
+          <td>{{ request.approvalDate | date: 'short' }}</td>
+          <td>{{ request.status }}</td>
         </tr>
       </tbody>
+      
     </table>
   </div>
   <!-- [ngClass]="{ 'table-success': request.status === 'approved', 'table-warning': request.status === 'pending' }" -->
