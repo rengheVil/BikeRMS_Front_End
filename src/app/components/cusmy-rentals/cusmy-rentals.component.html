@@ -14,13 +14,13 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngIf="rentals">
         <tr *ngFor="let rental of rentals">
-          <td>{{ rental.motorbike.regNumber }}</td>
-          <td>{{ rental.motorbike.brand }}</td>
-          <td>{{ rental.motorbike.model }}</td>
-          <td>{{ rental.motorbike.category }}</td>
-          <td>{{ rental.rentDate| date:'short' }}</td>
+          <td>{{ rental?.motorbike.regNumber}}</td>
+          <td>{{ rental?.motorbike.brand }}</td>
+          <td>{{ rental?.motorbike.model }}</td>
+          <td>{{ rental?.motorbike.category }}</td>
+          <td>{{ rental?.approvalDate | date:'short' }}</td>
           <td>
             <button class="btn btn-danger" (click)="returnRental(rental.id)">
               Return

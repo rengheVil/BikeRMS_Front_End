@@ -11,11 +11,19 @@ export interface Bike {
 }
 
 export interface Rental {
+    regNumber: any;
     id: number;
     moterbikeId :string;
     userId:string
     motorbike : any,
     rentDate : Date;
+    approvalDate : Date;
+
+  customer: string;
+  brand: string;
+  model: string;
+  status: string;
+
 }
 
 
@@ -31,7 +39,7 @@ export interface RentalRequest {
     requestDate: string;
     category:string;
     status: string;
-    approvalDate : string;
+    approvalDate : Date;
   }
   
 
