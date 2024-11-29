@@ -1,7 +1,7 @@
 
 <br><br>
 
-<div class="container">
+<!-- <div class="container">
     <h2>Customer Rentals</h2>
     <table class="table table-bordered">
       <thead>
@@ -25,5 +25,33 @@
         </tr>
       </tbody>
     </table>
+  </div> -->
+
+  <div class="container">
+    <h2>Customer Rentals status </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Rent Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rental of rentals" [ngClass]="getStatusClass(rental.status)">
+          <td>{{ rental.userId || 'N/A' }}</td>
+          <td>{{ rental.motorbike?.regNumber || 'N/A' }}</td>
+          <td>{{ rental?.motorbike?.brand || 'N/A' }}</td>
+          <td>{{ rental?.motorbike?.model || 'N/A' }}</td>
+          <td>{{ rental.rentDate | date: 'shortDate' }}</td>
+          <td>{{ rental.status ? "Active" : "Overdue" }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  
   

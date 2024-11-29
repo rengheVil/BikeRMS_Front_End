@@ -18,7 +18,7 @@
       <tbody>
         <tr *ngFor="let request of rentalRequests">
           <td>{{ request.userId }}</td>
-          <td>{{ request.id }}</td>
+          <td>{{ request?.motorbike.regNumber }}</td>
           <td >{{ request?.motorbike.brand }}</td>
           <td>{{ request?.motorbike.model }}</td>
           <td>{{ request.requestDate | date:'short' }}</td>

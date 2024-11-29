@@ -18,15 +18,13 @@ export class CusmyRentalsComponent implements OnInit{
     this.loadRentals();
   }
 
-  // loadRentals(): void {
-  
-  // }
-
+ 
   loadRentals(): void {
     let user = JSON.parse(localStorage.getItem("user") || '');
     console.log(user);
     this.rentalService.getUserApprovals(user.id).subscribe(
       (data) => {
+        console.log(data);
         this.rentals = data;
       },
       (error) => {

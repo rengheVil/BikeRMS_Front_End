@@ -17,7 +17,7 @@
         <tr *ngFor="let request of rentalRequests">
           <td>{{ request.motorbike?.regNumber || 'N/A' }}</td>
           <td>{{ request.motorbike?.brand || 'N/A' }}</td>
-          <td>{{ request.motorbike?.motorbikeId|| 'N/A' }}</td>
+          <td>{{ request.motorbike?.model|| 'N/A' }}</td>
           <td>{{ request.motorbike?.category || 'N/A' }}</td>
           <td>{{ request.approvalDate | date: 'short' }}</td>
           <td>{{ request.status }}</td>

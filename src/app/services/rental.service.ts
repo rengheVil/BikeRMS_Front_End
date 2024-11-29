@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Bike } from '../Models/Bike';
 import { User } from '../Models/User';
+import { Rental } from '../Models/Rental';
 
 
 @Injectable({
@@ -19,6 +20,7 @@ export class RentalService {
   private apirental =  'https://localhost:7178/api/Rental';
   
   private approveUrl = 'https://localhost:7178/api/RentalRequest/Approvals';
+  private apireturn  = 'https://localhost:7178/api/Rental/return/{rentalId}';
 
     // register 
     register(user: User): Observable<any> {
@@ -49,6 +51,9 @@ export class RentalService {
     getRentals(userId: number): Observable<any[]> {
       return this.http.get<any[]>(`${this.approveUrl}/${userId}`);
     }
+    getAllRentalRecords(){
+      return this.http.get<Rental[]>("https://localhost:7178/api/Rental");
+    }
 
     getRentalRequests(): Observable<any[]> {
       return this.http.get<any[]>(this.apirequest);
@@ -70,7 +75,7 @@ export class RentalService {
     //   return this.http.get(this.apirequest);
     // }https://localhost:7178/api/RentalRequest/12/status
   
-    //manager rentalRequests
+    //manager rentalRequests Approved
     updateRequestStatus(requestId: number): Observable<any> {
       return this.http.get(`${this.apirequest}/${requestId}/update`);
     }
@@ -84,9 +89,17 @@ export class RentalService {
       });
     }
 
+    /////// return rental 
     returnRental(rentalId: number): Observable<any> {
-      return this.http.post(`${this.apiUrl}/return`, { RentalId: rentalId });
+      return this.http.post(`${this.apireturn}/return`, { RentalId: rentalId });
     }
+    
+
+
+    /// overdue rentals
+    // getStatusClass(userId: string): Observable<any[]> {
+    //   return this.http.get<any[]>(`${this.apiUrl}/overdue?userId=${userId}`);
+    // }
 
     //man order history
     getOrderHistory(): Observable<any> {
