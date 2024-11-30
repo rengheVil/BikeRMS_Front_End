@@ -20,7 +20,7 @@ export class RentalService {
   private apirental =  'https://localhost:7178/api/Rental';
   
   private approveUrl = 'https://localhost:7178/api/RentalRequest/Approvals';
-  private apireturn  = 'https://localhost:7178/api/Rental/return/{rentalId}';
+  private apireturn  = 'https://localhost:7178/api/Rental/return/';
 
     // register 
     register(user: User): Observable<any> {
@@ -91,7 +91,7 @@ export class RentalService {
 
     /////// return rental 
     returnRental(rentalId: number): Observable<any> {
-      return this.http.post(`${this.apireturn}/return`, { RentalId: rentalId });
+      return this.http.get(this.apireturn+rentalId);
     }
     
 

@@ -32,12 +32,9 @@ export class MrentalRequestComponent implements OnInit{
     console.log(id)
     this.rentalService.updateRequestStatus(id).subscribe(data =>{
       console.log(data);
-      data.status = "approved";
+      alert('Sure to approve')
+      this.loadRentalRequests()
     })
-    // this.rentalService.updateRequestStatus(id, 'approved', requestDate).subscribe(() => {
-    //   this.loadRentalRequests();
-    // });
-    
   }
 
 

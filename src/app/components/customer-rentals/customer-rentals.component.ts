@@ -3,6 +3,7 @@ import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { error } from 'console';
 import { Rental } from '../../Models/Rental';
+import { json } from 'stream/consumers';
 
 @Component({
   selector: 'app-customer-rentals',
@@ -48,13 +49,23 @@ export class CustomerRentalsComponent  implements OnInit{
           console.log(data);
         },
         (error) => {
+          
           console.error('Error fetching rentals:', error);
           alert('Failed to load rentals. Please try again later.');
         }
       );
     }
 
-    
+    returnRental(rentalId: number): void {
+      console.log(rentalId);
+      
+      this.rentalService.returnRental(rentalId).subscribe((response) => {       
+        this.loadRentals();
+        alert(response.message);
+        this.loadRentals(); 
+      });
+    }
+  
     // loadRentals(): void {
     //   this.rentalService.getAllRentalRecords().subscribe(
     //     (data) => {

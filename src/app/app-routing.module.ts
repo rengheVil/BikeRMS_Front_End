@@ -25,6 +25,7 @@ const routes: Routes = [
         { path: 'MordHistory' , component: MorderHistoryComponent},
         { path: 'availableBike', component: AvailableBikesComponent},
         { path: 'cusRental', component:CustomerRentalsComponent},
+        { path: 'CusmyRentals', component: CusmyRentalsComponent},
       ]},
   
   

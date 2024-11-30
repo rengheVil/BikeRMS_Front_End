@@ -38,6 +38,7 @@
           <th>Model</th>
           <th>Rent Date</th>
           <th>Status</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -47,7 +48,19 @@
           <td>{{ rental?.motorbike?.brand || 'N/A' }}</td>
           <td>{{ rental?.motorbike?.model || 'N/A' }}</td>
           <td>{{ rental.rentDate | date: 'shortDate' }}</td>
-          <td>{{ rental.status ? "Active" : "Overdue" }}</td>
+          
+          <td [ngStyle]="{ 'color': rental.status ? 'red' : 'green'}">
+            {{ rental.status ? "Overdue" : "Active" }}
+          </td>
+          
+          
+          <td>
+
+            <button class="btn btn-danger" (click)="returnRental(rental.id)">
+              Return
+            </button>
+          </td>
+
         </tr>
       </tbody>
     </table>
