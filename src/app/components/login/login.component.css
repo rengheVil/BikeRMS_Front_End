@@ -1,5 +1,10 @@
 
 
+/* body{
+  background-image: url('/mt.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
   
 .bg-color{
   background-size:cover; 

@@ -83,13 +83,14 @@
   <div class="sidebar">
     <h1>Bike Manager</h1> <br>
     <ul>
+      <!-- <span class="menu-item"><li><i class="fa-solid fa-gauge"></i> <a [routerLink]="['dashboard']"> Dashboard</a></li></span> -->
+      <span class="menu-item"><li> <i class="fa-solid fa-plus"></i> <a [routerLink]="['addBike']" >addBike</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-motorcycle"></i><a [routerLink]="['availableBike']" >availableBike</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-square-up-right"></i> <a [routerLink]="['MrentalRequest']" >Rental Requests</a></li></span>
       
-      <li><a [routerLink]="['addBike']" >addBike</a></li>
-      <li><a [routerLink]="['availableBike']" >availableBike</a></li>
-      <li><a [routerLink]="['MrentalRequest']" >Rental Requests</a></li>
-      <li><a [routerLink]="['CusmyRentals']" >CusmyRentals</a></li>
-      <li><a [routerLink]="['cusRental']" >Customer Rentals</a></li>
-      <li><a [routerLink]="['MordHistory']" > Order History</a></li>
+      <span class="menu-item"><li> <i class="fa-solid fa-square-down-left"></i> <a [routerLink]="['cusRental']" >Customer Rentals</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-clock-rotate-left"></i><a [routerLink]="['MordHistory']" > Order History</a></li></span> 
+      <span class="menu-item"><li><a [routerLink]="['McusDetail']" >Customer Details </a></li></span>
 <hr> <br><br> <br><br>
       <!-- <li> Customer </li>
       <li><a [routerLink]="['CusavaiBikes']" >CusavaiBikes</a></li>
@@ -128,7 +129,7 @@
                   aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
-              <a class="navbar-brand" href="#">Navbar</a>
+              <a class="navbar-brand" href="#">Manager</a>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       

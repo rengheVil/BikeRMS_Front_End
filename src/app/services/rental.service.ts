@@ -19,8 +19,9 @@ export class RentalService {
   private apirequest =     'https://localhost:7178/api/RentalRequest';
   private apirental =  'https://localhost:7178/api/Rental';
   
-  private approveUrl = 'https://localhost:7178/api/RentalRequest/Approvals';
+  private approveUrl = 'https://localhost:7178/api/RentalRequest/Approvals';       
   private apireturn  = 'https://localhost:7178/api/Rental/return/';
+  private apiHistory = 'https://localhost:7178/api/OrderHistory';
 
     // register 
     register(user: User): Observable<any> {
@@ -49,7 +50,9 @@ export class RentalService {
 
    // Get all rentals
     getRentals(userId: number): Observable<any[]> {
-      return this.http.get<any[]>(`${this.approveUrl}/${userId}`);
+      console.log("userid"+userId);
+     // 'https://localhost:7178/api/RentalRequest/Approvals/1003'
+      return this.http.get<any>(`${this.approveUrl}/${userId}`);
     }
     getAllRentalRecords(){
       return this.http.get<Rental[]>("https://localhost:7178/api/Rental");
@@ -103,7 +106,7 @@ export class RentalService {
 
     //man order history
     getOrderHistory(): Observable<any> {
-      return this.http.get(this.apiUrl);
+      return this.http.get(this.apiHistory);
     }
     
 }

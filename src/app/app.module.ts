@@ -17,7 +17,7 @@ import { CusmyRentalsComponent } from './components/cusmy-rentals/cusmy-rentals.
 import { CusmyrentalRequestsComponent } from './components/cusmyrental-requests/cusmyrental-requests.component';
 import { MorderHistoryComponent } from './components/morder-history/morder-history.component';
 import { CusorderHistoryComponent } from './components/cusorder-history/cusorder-history.component';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule, provideRouter } from '@angular/router';
 import {  HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -29,6 +29,7 @@ import { StartPageComponent } from './components/start-page/start-page.component
 import { ZaboutComponent } from './components/zabout/zabout.component';
 import { CviewRequestComponent } from './components/cview-request/cview-request.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     StartPageComponent,
     ZaboutComponent,
     CviewRequestComponent,
+    ManagerDashboardComponent,
     
   ],
   imports: [
@@ -72,7 +74,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   ],
   
   providers: [
-    provideClientHydration(), provideHttpClient(),
+    provideClientHydration(), 
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent]
 })

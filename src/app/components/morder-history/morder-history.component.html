@@ -7,19 +7,23 @@
       <thead class="thead-dark">
         <tr>
           <th>Reg. Number</th>
+          <th>MotorbikeID</th>
           <th>Brand</th>
           <th>Model</th>
+          <th>UserId</th>
           <th>Rent Date</th>
           <th>Return Date</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let order of orderHistory">
-          <td>{{ order.RegNumber }}</td>
-          <td>{{ order.Brand }}</td>
-          <td>{{ order.Model }}</td>
-          <td>{{ order.RentDate | date: 'short' }}</td>
-          <td>{{ order.ReturnDate | date: 'short' }}</td>
+          <td>{{ order.id }}</td>
+          <td>{{ order?.motorbikeId }}</td>
+          <td>{{ order.brand }}</td>
+          <td>{{ order.modal }}</td>
+          <td>{{ order.userId}}</td>
+          <td>{{ order.rentDate | date: 'short' }}</td>
+          <td>{{ order.returnDate | date: 'short' }}</td>
         </tr>
       </tbody>
     </table>

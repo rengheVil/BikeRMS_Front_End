@@ -1,0 +1,55 @@
+<div class="dashboard">
+    <div class="container my-4">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="stat-card">
+              <h3>Total Motorbikes</h3>
+              <p>{{ totalMotorbikes }}</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-card">
+              <h3>Active Rentals</h3>
+              <p>{{ activeRentals }}</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-card">
+              <h3>Monthly Revenue</h3>
+              <p>${{ monthlyRevenue }}</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-card">
+              <h3>Overdue Rentals</h3>
+              <p>{{ 0 }}</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-card">
+              <h3>Rental Requests</h3>
+              <p>{{ 0 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+   
+  
+    <div class="sections">
+      <div class="section">
+        <h3>Motorbike Inventory</h3>
+        <app-available-bikes></app-available-bikes>
+      </div>
+  
+      <!-- <div class="section">
+        <h3>Active Rentals</h3>
+        <ul>
+          <li *ngFor="let rental of activeRentalsList">
+            {{ rental.customerName }} - {{ rental.bikeModel }} ({{ rental.date }})
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
+  

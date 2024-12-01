@@ -15,33 +15,43 @@ import { CustomerComponent } from './layouts/customer/customer.component';
 import { ManagerComponent } from './layouts/manager/manager.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { ZaboutComponent } from './components/zabout/zabout.component';
+import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
+import { authGuard } from './Guards/auth.guard';
+import { McustomerDetailComponent } from './components/mcustomer-detail/mcustomer-detail.component';
 
 const routes: Routes = [
 
-   { path: 'Manager' , component: ManagerComponent , 
-   children : [
-        { path: 'addBike', component: AddBikesComponent },
-        { path: 'MrentalRequest' , component: MrentalRequestComponent},
-        { path: 'MordHistory' , component: MorderHistoryComponent},
-        { path: 'availableBike', component: AvailableBikesComponent},
-        { path: 'cusRental', component:CustomerRentalsComponent},
-        { path: 'CusmyRentals', component: CusmyRentalsComponent},
-      ]},
-  
-  
-   { path: 'Customer' , component:CustomerComponent,
-    children : [
-        { path: 'CusavaiBikes' , component: CusavailableBikesComponent },
-        { path: 'CusmyRentals', component: CusmyRentalsComponent},
-        { path: 'CusmyrentalRequest' , component: CusmyrentalRequestsComponent},
-        { path: 'CusorderHistory' , component:CusorderHistoryComponent},
-    ]},
-  
-   { path: '' , component: LoginComponent},
-   { path: 'Register', component: RegisterComponent},
+  {
+    path: 'Manager', component: ManagerComponent,
+    children: [
+      { path: 'dashboard', component: ManagerDashboardComponent },
+      { path: 'addBike', component: AddBikesComponent },
+      { path: 'MrentalRequest', component: MrentalRequestComponent },
+      { path: 'MordHistory', component: MorderHistoryComponent },
+      { path: 'availableBike', component: AvailableBikesComponent },
+      { path: 'cusRental', component: CustomerRentalsComponent },
+      { path: 'CusmyRentals', component: CusmyRentalsComponent },
+      { path: 'McusDetail' , component: McustomerDetailComponent}
+    ]
+  },
 
-   { path: 'start' , component: StartPageComponent},
-   { path: 'about', component: ZaboutComponent}
+
+  {
+    path: 'Customer', component: CustomerComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: 'CusavaiBikes', component: CusavailableBikesComponent },
+      { path: 'CusmyRentals', component: CusmyRentalsComponent },
+      { path: 'CusmyrentalRequest', component: CusmyrentalRequestsComponent },
+      { path: 'CusorderHistory', component: CusorderHistoryComponent },
+    ]
+  },
+
+  { path: '', component: LoginComponent },
+  { path: 'Register', component: RegisterComponent },
+
+  { path: 'start', component: StartPageComponent },
+  { path: 'about', component: ZaboutComponent }
 
 ];
 

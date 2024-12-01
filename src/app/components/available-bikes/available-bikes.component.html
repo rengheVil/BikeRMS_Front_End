@@ -8,6 +8,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+          <th> BikeId</th>
           <th>Reg. Number</th>
           <th>Brand</th>
           <th>Model</th>
@@ -18,6 +19,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let bike of motorbikes">
+          <td>{{ bike.id}}</td>
           <td>{{ bike.regNumber }}</td>
           <td>{{ bike.brand }}</td>
           <td>{{ bike.model }}</td>

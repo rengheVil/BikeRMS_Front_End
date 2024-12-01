@@ -3,6 +3,7 @@ import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { RentalRequest } from '../../Models/Rental';
 import { log } from 'console';
+import { User } from '../../Models/User';
 
 
 @Component({
@@ -11,13 +12,17 @@ import { log } from 'console';
   styleUrl: './cusmyrental-requests.component.css'
 })
 export class CusmyrentalRequestsComponent implements OnInit{
-
+   LoggedinUser =localStorage.getItem("user") || '';
+  User:User=JSON.parse(this.LoggedinUser)
   rentalRequests: RentalRequest[] = [];
-  userId: number = 7;
+  userId: number = 0;
 
   constructor(private bikeService: BikeService , private rentalService: RentalService) {}
 
   ngOnInit(): void {
+   
+    this.userId=this.User.id;
+    //this.userId=
     this.loadRentalRequests();
   }
 
@@ -25,8 +30,10 @@ export class CusmyrentalRequestsComponent implements OnInit{
     this.rentalService.getRentals(this.userId).subscribe(data => {
       this.rentalRequests = data;
       console.log(data);
-      
-    });
+    },
+  err=>{
+    console.log(err.message)
+  });
   }
 
  
