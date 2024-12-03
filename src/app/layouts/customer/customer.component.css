@@ -1,11 +1,13 @@
 /* Sticky Navbar Container */ /* For Tablets (max-width: 768px) */ /* For Mobile (max-width: 480px) */
-/* 
+
 .top-bar {
   padding: 5px;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  background: #a0f8e8;
+  background: #5cbbad;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .sticky-navbar {
@@ -58,12 +60,13 @@ height: 70px;
 .nav-menu a {
   text-decoration: none;
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: larger;
   transition: color 0.3s ease-in-out;
 }
 
 .nav-menu a:hover {
-  color: #ffc107;
+  color: #ebb309;
 }
 
 .book-now-btn {
@@ -128,7 +131,7 @@ height: 70px;
     font-size: 0.9rem;
     padding: 8px 0;
   }
-} */
+} 
 
   /* Ensure the section takes up full height minus header/footer */ /*Subtle shadow for elevation */
   /* nav bar 2 no */
@@ -160,7 +163,12 @@ height: 70px;
   width: 100%;
 }
      
+.footer{
+  opacity: 0.7;
+}
 
+
+/*
    .navbar {
     display: flex;
     justify-content: space-between;

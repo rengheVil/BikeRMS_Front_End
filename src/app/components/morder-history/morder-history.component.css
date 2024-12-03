@@ -1,29 +1,21 @@
-
-/* 
-.table {
-    width: 100%;
-  }
-  .thead-dark {
-    background-color: #343a40;
-    color: white;
-  }
-   */
-
-   /* Container Styling */
-   .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #f9f9f9; /* Subtle gray for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
 
 .container h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* Table Styling */
@@ -36,46 +28,112 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.table th, 
+.table th,
 .table td {
   text-align: left;
   padding: 12px 15px;
+  font-size: 14px;
+  color: #555;
 }
 
-.table thead.thead-dark th {
-  background-color: #007bff;
+.table thead th {
+  background-color: #007bff; /* Blue header */
   color: white;
   text-transform: uppercase;
   font-weight: bold;
+  border: 1px solid #e0e0e0;
 }
 
 .table tbody tr:nth-child(odd) {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light gray */
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #ffffff; /* White */
 }
 
 .table tbody tr:hover {
-  background-color: #e6f7ff;
+  background-color: #e6f7ff; /* Highlighted light blue on hover */
 }
 
-/* Border for Rows and Cells */
-.table tbody tr td, 
+.table tbody tr td,
 .table thead th {
   border: 1px solid #ddd;
 }
 
-/* Responsive Design */
+/* Button Styling */
+button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05);
+}
+
+/* Responsive Table Design */
 @media (max-width: 768px) {
   .table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+    font-size: 12px; /* Adjust font size for smaller screens */
   }
 
   .container h2 {
-    font-size: 1.5rem;
+    font-size: 18px; /* Adjust heading size for mobile */
   }
+
+  button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-footer {
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-header .btn-close {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+
+.modal-header .btn-close:hover {
+  color: #f8d7da;
 }

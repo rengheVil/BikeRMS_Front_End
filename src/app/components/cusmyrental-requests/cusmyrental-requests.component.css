@@ -7,7 +7,28 @@
   .table-warning {
     background-color: #fff3cd;
   }
-  .table {
+
+
+  /* Scrollable Table with Sticky Header */
+.table-container {
+  max-height: 400px; /* Set the maximum height for the table container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ddd; /* Optional: Border for better separation */
+  border-radius: 8px;
+}
+
+.table th {
+  position: sticky; /* Sticky positioning */
+  top: 0; /* Stick to the top of the table container */
+  background-color: #125ba8; /* Ensure the background remains visible */
+  z-index: 2; /* Keep headers above other elements */
+  color: white; /* Header text color */
+  text-transform: uppercase; /* Optional: Stylize text */
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 1px solid #ddd; /* Optional: Add bottom border */
+}
+  /* .table {
     width: 100%;
   }
   .container {
@@ -19,3 +40,159 @@
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #9dc9c9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* order-history.component.css */
+.order-history {
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* thead {
+    background-color: #007bff; 
+     color: #fff;
+  } */
+  
+  /* th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #e6c2c2;
+    background-color: #e6c2c2;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #4cd2be;
+  } */
+  
+  
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 12px;
+}
+
+.table th {
+  background-color: #125ba8;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Image Styling */
+table img {
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Button Styling */
+button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #a71d2a;
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-header h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-footer {
+  border-top: 1px solid #ddd;
+}
+
+/* Close Button */
+.modal-header .btn-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-header .btn-close:hover {
+  color: #f8d7da;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  table th, table td {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 12px;
+      padding: 6px 10px;
+  }
+}

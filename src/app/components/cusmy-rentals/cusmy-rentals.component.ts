@@ -20,9 +20,12 @@ export class CusmyRentalsComponent implements OnInit{
 
  
   loadRentals(): void {
-    let user = JSON.parse(localStorage.getItem("user") || '');
+   // let user = JSON.parse(localStorage.getItem("user") || '');
+    let userId = parseInt(localStorage.getItem("userId") || "");
+    console.log(userId);
+    let user: any;
     console.log(user);
-    this.rentalService.getUserApprovals(user.id).subscribe(
+    this.rentalService.getUserApprovals(userId).subscribe(
       (data) => {
         console.log(data);
         this.rentals = data;

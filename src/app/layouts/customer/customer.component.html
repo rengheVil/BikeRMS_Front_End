@@ -1,10 +1,10 @@
 <!-- Logo -->  <!-- Toggler for mobile view -->  <!-- Navbar Links -->  <!-- Sign In and Sign Up Buttons -->
 
  <!-- <div class="top-bar">
-  <span>📍 No, 176, Lewis Place, Negombo, Sri Lanka</span>
-  <span>⏰ 7AM to 7PM</span>
-  <span>📞 +94 77 518 6500 | +94 77 665 0525</span>
-</div>
+  <b> <span>📍 No, 120, post office road, Trincomalee, Sri Lanka</span></b>
+  <b> <span>⏰ 7AM to 7PM</span> </b>
+  <b> <span>📞 +94 77 520 2154 </span> </b>
+</div> -->
 
 <nav class="navbar sticky-navbar nav-menu navbar-expand-lg navbar-light bg-white">
 <div class="container">
@@ -30,21 +30,24 @@
     <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item"><a class="nav-link" href="#"></a> </li>     
       <li class="nav-item"></li>
-      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusavaiBikes']" >CusavaiBikes</a></li>
-      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusmyRentals']" >CusmyRentals</a></li>
-      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusmyrentalRequest']" >CusmyrentalRequest </a></li>
-      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusorderHistory']" >CusorderHistory</a></li>
+      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusavaiBikes']" >Available Bikes </a></li>
+      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusmyrentalRequest']" > Approved Requests </a></li>
+      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusmyRentals']" > Rentals </a></li>
+      <li class="nav-item" ><a class="nav-link" [routerLink]="['CusorderHistory']" > Order History </a></li>
     </ul>
 
     <div class="d-flex">
-      <button class="book-now-btn">Book Now →</button>
+      <button class="book-now-btn" style="border-radius: 10px;">  <a class="logout-link" [routerLink]="['']"  style=" color: rgb(239, 239, 247);
+        text-decoration: none;
+        font-size: 16px;">Log Out  </a>
+        <i class="fa-solid fa-right-from-bracket"></i></button>
     </div>
   </div>
 </div>
-</nav> -->
+</nav>
 
  
- <nav class="navbar">
+ <!-- <nav class="navbar">
   <div class="navbar-brand">
     <a href="#" class="brand-logo">🏍️ Motorbike Rental</a>
   </div>
@@ -57,12 +60,43 @@
   <div class="navbar-actions">
     <button (click)="logout()">Logout</button>
   </div>
-</nav> 
+</nav>  -->
+
+
+
+
 
 <div class="fullscreen">
   <div class="navbar">
 
+  </div> 
+   <!-- crousel -->
+
+  <div class="catogorys" style="margin-left: 90px;margin-right: 90px; margin-top: 20px;"> 
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+     
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="rengheson.jpg" style="width: 800px; height: 400px;" class="d-block w-100" alt="..."> 
+        </div>
+        <div class="carousel-item">
+          <img src="mt.webp" style="width: 800px; height: 400px;" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="ima4.jpg" style="width: 800px; height: 400px;" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+  
   <div class="section">
       <router-outlet></router-outlet>
   </div>
@@ -73,7 +107,7 @@
 
 <!-- About Section -->  <!-- Quick Links -->  <!-- Contact Section -->
 
-<footer class="footer mt-auto py-3 bg-dark text-white">
+<!-- <footer class="footer mt-auto py-3 bg-dark text-white">
   <div class="container">
     <div class="row">
       
@@ -109,4 +143,46 @@
       <p>&copy; 2024 Motorbike Rental. All Rights Reserved.</p>
     </div>
   </div>
+</footer> -->
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <!-- About Section -->
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>
+          We provide reliable and affordable motorbike rental services. Explore
+          the city or travel long distances with ease and comfort.
+        </p>
+      </div>
+
+ <!-- Contact Section -->
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <p>Email: supportmotorbikerental.com</p>
+        <p>Phone: 📞 +94 77 520 2154</p>
+        <p>Address: 📍 No, 120, post office road, Trincomalee, Sri Lanka</p>
+      </div>
+   
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
+     
+    <hr>
+    <div class="text-center">
+      <p>&copy; 2024 SafeRents. By V.Rengheson.</p>
+    </div>
+  </div> 
+</div>
 </footer>

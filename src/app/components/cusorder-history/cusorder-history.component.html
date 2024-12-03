@@ -14,11 +14,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let order of orderHistory">
-          <td>{{ order.RegNumber }}</td>
-          <td>{{ order.Brand }}</td>
-          <td>{{ order.Model }}</td>
-          <td>{{ order.RentDate | date:'MM/dd/yyyy, h:mm a' }}</td>
-          <td>{{ order.ReturnDate | date:'MM/dd/yyyy, h:mm a' }}</td>
+          <td>{{ order.motorbike?.regNumber }}</td>
+          <td>{{ order.motorbike?.brand }}</td>
+          <td>{{ order.motorbike?.model }}</td>
+          <td>{{ order.rentDate | date: 'MM/dd/yyyy, h:mm a' }}</td>
+          <td>{{ order.returnDate ? (order.returnDate | date: 'MM/dd/yyyy, h:mm a') : 'N/A' }}</td>
         </tr>
       </tbody>
     </table>

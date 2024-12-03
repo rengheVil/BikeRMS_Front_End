@@ -23,15 +23,17 @@ export class RentalService {
   private apireturn  = 'https://localhost:7178/api/Rental/return/';
   private apiHistory = 'https://localhost:7178/api/OrderHistory';
 
+  private userLogin ='https://localhost:7178/api/UserAccount/Log-In';
+private userRegister='https://localhost:7178/api/UserAccount/Register-User'
     // register 
     register(user: User): Observable<any> {
       console.log(user)
-      return this.http.post(`${this.apiUrlCus}/register`, user);
+      return this.http.post(`${this.userRegister}`, user);
     }
 
     // Login
     login(credentials: any): Observable<any> {
-      return this.http.post(`${this.apiUrlCus}/login`, credentials);
+      return this.http.post(`${this.userLogin}`, credentials);
     }
 
     getCustomers(): Observable<any[]> {
@@ -65,6 +67,12 @@ export class RentalService {
       return this.http.get<any>("https://localhost:7178/api/RentalRequest/" + id)
     }
 
+
+
+     // get customer History
+     getOrderHistoryByUserId(userId: number): Observable<any> {
+      return this.http.get<any[]>(`https://localhost:7178/api/OrderHistory/user/${userId}`);
+    }
 
     //////
 

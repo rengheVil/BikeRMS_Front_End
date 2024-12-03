@@ -5,7 +5,7 @@
   padding: 20px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #ffffff;
+  background-color: #cde1ec;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -18,6 +18,10 @@
     width: 100%;
     border-collapse: collapse;
   }
+
+  th{
+    background-color: rgb(132, 132, 238);
+  }
   
   /* thead {
     background-color: #007bff; 
@@ -27,7 +31,8 @@
   th, td {
     padding: 10px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #e6c2c2;
+    
   }
   
   tbody tr:nth-child(even) {

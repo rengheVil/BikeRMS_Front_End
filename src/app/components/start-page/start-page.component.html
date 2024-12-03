@@ -1,8 +1,8 @@
 
 <div class="top-bar">
-      <span>📍 No, 176, Lewis Place, Negombo, Sri Lanka</span>
-      <span>⏰ 7AM to 7PM</span>
-      <span>📞 +94 77 518 6500 | +94 77 665 0525</span>
+ <b> <span>📍 No, 120, post office road, Trincomalee, Sri Lanka</span></b>
+  <b> <span>⏰ 7AM to 7PM</span> </b>
+  <b> <span>📞 +94 77 520 2154 </span> </b>
     </div>
 
 <nav class="navbar sticky-navbar nav-menu navbar-expand-lg navbar-light bg-white">
@@ -32,14 +32,14 @@
           <li class="nav-item"><a class="nav-link"  routerLink="/">Home</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
         <li class="nav-item"><a class="nav-link"  routerLink="/contact">Contact</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Browse Bikes</a>
-          </li>
+          <!-- <li class="nav-item"> <a class="nav-link" href="#">Browse Bikes</a></li> -->
         </ul>
   
         <!-- Sign In and Sign Up Buttons -->
         <div class="d-flex">
-          <button class="book-now-btn">Book Now →</button>
+          <button class="book-now-btn"> <a class="logout-link" [routerLink]="['Login']"  style=" color: rgb(239, 239, 247);
+            text-decoration: none;
+            font-size: 16px;"> Book Now →  </a> </button>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
      
     <hr>
     <div class="text-center">
-      <p>&copy; 2024 Motorbike Rental. All Rights Reserved.</p>
+      <p>&copy; 2024 Motorbike Rentals. By V.Rengheson </p>
     </div>
   </div> 
 </div>

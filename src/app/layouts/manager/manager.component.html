@@ -81,17 +81,23 @@
 <div class="Bike-management">
   <!-- Sidebar -->
   <div class="sidebar">
-    <h1>Bike Manager</h1> <br>
+    <a class="navbar-brand" href="#">
+      <img src="ima2.png" alt="Safe Rentls" class="logo" />
+    <span class="brand-name">SafeRents</span>
+    </a> <br>
+    <!-- <h1> Manager</h1> -->
     <ul>
-      <!-- <span class="menu-item"><li><i class="fa-solid fa-gauge"></i> <a [routerLink]="['dashboard']"> Dashboard</a></li></span> -->
-      <span class="menu-item"><li> <i class="fa-solid fa-plus"></i> <a [routerLink]="['addBike']" >addBike</a></li></span>
-      <span class="menu-item"><li> <i class="fa-solid fa-motorcycle"></i><a [routerLink]="['availableBike']" >availableBike</a></li></span>
-      <span class="menu-item"><li> <i class="fa-solid fa-square-up-right"></i> <a [routerLink]="['MrentalRequest']" >Rental Requests</a></li></span>
-      
-      <span class="menu-item"><li> <i class="fa-solid fa-square-down-left"></i> <a [routerLink]="['cusRental']" >Customer Rentals</a></li></span>
+      <span class="menu-item"><li><i class="fa-solid fa-gauge"></i> <a [routerLink]="['']"> Dashboard</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-plus"></i> <a [routerLink]="['addBike']" >Add Bike</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-motorcycle"></i><a [routerLink]="['availableBike']" >Available Bike</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-circle-up"></i> <a [routerLink]="['MrentalRequest']" >Rental Requests</a></li></span>
+      <span class="menu-item"><li> <i class="fa-solid fa-circle-down"></i>  <a [routerLink]="['cusRental']" >Customer Rentals</a></li> </span>
       <span class="menu-item"><li> <i class="fa-solid fa-clock-rotate-left"></i><a [routerLink]="['MordHistory']" > Order History</a></li></span> 
-      <span class="menu-item"><li><a [routerLink]="['McusDetail']" >Customer Details </a></li></span>
-<hr> <br><br> <br><br>
+      <span class="menu-item"><li> <i class="fa fa-address-book" aria-hidden="true"></i><a [routerLink]="['McusDetail']" >Customer Details </a></li></span>
+
+      
+<hr> <br><br> 
+
       <!-- <li> Customer </li>
       <li><a [routerLink]="['CusavaiBikes']" >CusavaiBikes</a></li>
       <li><a [routerLink]="['CusmyRentals']" >CusmyRentals</a></li>
@@ -138,6 +144,12 @@
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
+                  <div class="d-flex" style="gap: 8px;">
+                   <button class="book-now-btn" style="border-radius: 10px;">  <a class="logout-link" [routerLink]="['']"  style=" color: rgb(239, 239, 247);
+                    text-decoration: none;
+                    font-size: 16px;">Log Out  </a>
+                    <i class="fa-solid fa-right-from-bracket"></i></button>
+                  </div>
               </div>
           </div>
       </nav>
