@@ -1,8 +1,8 @@
-
-<form [formGroup]="editBikeForm">
+ <!-- <h2 class="text-danger mt-3"> Update Bike </h2> -->
+<!-- <form [formGroup]="editBikeForm">
     <div class="row">
-        <div class="col-8"> <br><br>
-            <!-- <h2 class="text-danger mt-3"> Update Bike </h2> -->
+        <div class="col-8"> <br>
+           
 
             <label for="regNumber" class="form-label">Registration Number: </label>
             <input type="text" class="form-control" id="regNumber" formControlName="regNumber">
@@ -18,15 +18,67 @@
                 <option value="Bike">Bike</option>
                 <option value="Sport">Sport</option>
                 <option value="Touring">Touring</option>
-            </select>
+            </select> -->
 
-            <label for="bikeImage" class="form-label">Bike Image: </label>
+            <!-- <label for="bikeImage" class="form-label">Bike Image: </label> -->
             <!-- <input type="file" class="form-control-file" id="bikeImage" formControlName="bikeImage" accept="image/*" (change)="onFileChange(fileInput.files ? fileInput.files[0] : null)"> <br> -->
 
-            <button type="submit" class="btn btn-primary mt-3" (click)="viewBike()" >Submit</button>
+            <!-- <button type="submit" class="btn btn-primary mt-3" (click)="viewBike()" >Submit</button>
 
         </div>
 
        
     </div>
-</form>
+</form> -->
+
+<form [formGroup]="editBikeForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-8">
+        <!-- <h2 class="text-primary mt-3">Update Bike</h2> --> 
+  
+        <label for="regNumber" class="form-label">Registration Number:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="regNumber"
+          formControlName="regNumber"
+          placeholder="Enter Registration Number"
+        />
+  
+        <label for="brand" class="form-label">Brand:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brand"
+          formControlName="brand"
+          placeholder="Enter Brand"
+        />
+  
+        <label for="model" class="form-label">Model:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="model"
+          formControlName="model"
+          placeholder="Enter Model"
+        />
+  
+        <label for="category" class="form-label">Category:</label>
+        <select class="form-control" id="category" formControlName="category">
+          <option value="Bike">Bike</option>
+          <option value="Sport">Sport</option>
+          <option value="Touring">Touring</option>
+        </select>
+  
+        <!-- <label for="bikeImage" class="form-label">Bike Image:</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="bikeImage"
+          (change)="onFileChange($event)"
+          accept="image/*"
+        /> -->
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
+      </div>
+    </div>
+  </form>

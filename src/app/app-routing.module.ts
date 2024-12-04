@@ -24,13 +24,13 @@ const routes: Routes = [
   {
     path: 'Manager', component: ManagerComponent,
     children: [
-      { path: '', component: ManagerDashboardComponent },
+      { path: 'Dashboard', component: ManagerDashboardComponent },
       { path: 'addBike', component: AddBikesComponent },
       { path: 'MrentalRequest', component: MrentalRequestComponent },
       { path: 'MordHistory', component: MorderHistoryComponent },
       { path: 'availableBike', component: AvailableBikesComponent },
       { path: 'cusRental', component: CustomerRentalsComponent },
-      { path: 'CusmyRentals', component: CusmyRentalsComponent },
+     // { path: 'CusmyRentals', component: CusmyRentalsComponent },
       { path: 'McusDetail' , component: McustomerDetailComponent}
     ]
   },
@@ -38,8 +38,9 @@ const routes: Routes = [
 
   {
     path: 'Customer', component: CustomerComponent,
-   // canActivate: [authGuard],
+    canActivate: [authGuard],
     children: [
+      { path: '', component: ZaboutComponent },
       { path: 'CusavaiBikes', component: CusavailableBikesComponent },
       { path: 'CusmyRentals', component: CusmyRentalsComponent },
       { path: 'CusmyrentalRequest', component: CusmyrentalRequestsComponent },

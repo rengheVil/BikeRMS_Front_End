@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Bike } from '../../Models/Bike';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -16,7 +17,7 @@ export class MrentalRequestComponent implements OnInit{
   
   motorbikes: any[] = [];  requestDate:any[] =[];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService , private toastr: ToastrService) {}
 
   // ngOnInit(): void {
   //   this.loadRentalRequests();
@@ -32,6 +33,7 @@ export class MrentalRequestComponent implements OnInit{
     console.log(id)
     this.rentalService.updateRequestStatus(id).subscribe(data =>{
       console.log(data);
+      this.toastr.success('Approved Successfully!');
       alert('Sure to approve')
       this.loadRentalRequests()
     })

@@ -3,6 +3,7 @@ import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CusavailableBikesComponent implements OnInit {
 
   motorbikes: any[] = [];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService, private fb: FormBuilder) {
+  constructor(private bikeService: BikeService, private rentalService: RentalService, private fb: FormBuilder , private toastr: ToastrService) {
 
   }
 
@@ -56,12 +57,13 @@ export class CusavailableBikesComponent implements OnInit {
     let requestDate = new Date();
     this.rentalService.requestRental(motorbikeId, userId, requestDate).subscribe(
       (response) => {
-
+        this.toastr.success(`${userId}, your request was successfully sent. Please wait.`);
         alert(response.Message);
         this.loadMotorbikes();
       },
       (error) => {
         console.error('Error during rental request:', error);
+        this.toastr.error('There was an error processing your rental request.');
         alert('There was an error processing your rental request.');
       }
     );

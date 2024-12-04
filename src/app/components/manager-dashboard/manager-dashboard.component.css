@@ -6,7 +6,7 @@
   }
 
   .stat-card {
-    background: #f7f7f7;
+    background: linear-gradient(to right, #97b9dd, rgb(240, 222, 27)) ;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -17,7 +17,7 @@
   .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: #e6f7ff;
+    background: #edd41a;
   }
   
   .stat-card h3 {

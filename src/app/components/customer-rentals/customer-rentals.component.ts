@@ -4,6 +4,7 @@ import { RentalService } from "../../services/rental.service";
 import { error } from 'console';
 import { Rental } from '../../Models/Rental';
 import { json } from 'stream/consumers';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-customer-rentals',
@@ -16,7 +17,7 @@ export class CustomerRentalsComponent  implements OnInit{
   rental! :Rental;
   //rentals: Rental[] = [];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService, private toastr:ToastrService) {}
 
   ngOnInit(): void {
     this.loadRentals();
@@ -61,6 +62,7 @@ export class CustomerRentalsComponent  implements OnInit{
       
       this.rentalService.returnRental(rentalId).subscribe((response) => {       
         this.loadRentals();
+        this.toastr.success(`${rentalId}, your request was successfully sent. Please wait.`);
         alert(response.message);
         this.loadRentals(); 
       });

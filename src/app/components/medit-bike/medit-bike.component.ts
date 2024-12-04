@@ -13,7 +13,7 @@ import { Bike } from '../../Models/Bike';
 })
 export class MeditBikeComponent {
 
-
+  
   editBikeForm: any;
   motorbikes: any[] = [];
   @Input() bikeData : any;
@@ -24,7 +24,7 @@ export class MeditBikeComponent {
         brand: [''],
         model: [''],
         category: ['', [Validators.required]],
-        bikeImage : [null]
+       // bikeImage : [null]
   });
 
   }
@@ -42,16 +42,36 @@ export class MeditBikeComponent {
     );
   }
 
-  onUpdate(bike: Bike): void {
-      const updatedBike = { ...bike, brand: 'Updated Brand' }; 
-    this.bikeService.updateMotorbike(bike.id, updatedBike).subscribe(
-      (response) => {
-        console.log('Updated:', response);
-        this.loadMotorbikes();
-      },
-      (error) => console.error(error)
-    );
+  onSubmit(): void {
+    if (this.editBikeForm.valid) {
+      const updatedBike = {
+        ...this.bikeData,
+        ...this.editBikeForm.value,
+      };
+
+      this.bikeService.updateMotorbike(this.bikeData.id, updatedBike).subscribe(
+        (response) => {
+          console.log('Bike updated successfully:', response);
+          this.loadMotorbikes();
+        },
+        (error) => console.error('Error updating bike:', error)
+      );
+    } else {
+      console.warn('Form is invalid. Please check the fields.');
+    }
   }
+
+
+  // onUpdate(bike: Bike): void {
+  //     const updatedBike = { ...bike, brand: 'Updated Brand' }; 
+  //   this.bikeService.updateMotorbike(bike.id, updatedBike).subscribe(
+  //     (response) => {
+  //       console.log('Updated:', response);
+  //       this.loadMotorbikes();
+  //     },
+  //     (error) => console.error(error)
+  //   );
+  // }
   viewBike(){
   console.log(this.bikeData);
   }

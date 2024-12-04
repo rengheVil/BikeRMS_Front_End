@@ -35,8 +35,11 @@ export class CusorderHistoryComponent implements OnInit{
   }
 
   fetchOrderHistory(): void {
-    console.log(this.userId)
-    this.rentalService.getOrderHistoryByUserId(this.User.id).subscribe(
+    let userId = parseInt(localStorage.getItem("userId") || "");
+    console.log(userId);
+    let user: any;
+    console.log(user);
+    this.rentalService.getOrderHistoryByUserId(userId).subscribe(
       (data: any[]) => {
         this.orderHistory = data;
       },
@@ -45,6 +48,8 @@ export class CusorderHistoryComponent implements OnInit{
       }
     );
   }
+
+
 
 
 }

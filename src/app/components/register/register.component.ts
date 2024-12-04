@@ -28,7 +28,7 @@ export class RegisterComponent {
       this.rentalService.register(this.registerForm.value).subscribe({
         next: (response) => {
           this.message = response.Message;
-          this.toastr.success(this.message || 'Registration successful!', 'Success');
+          this.toastr.success(this.message || 'Registration successful!' , 'Success');
         },
         error: (err) => {
           this.message = err.error || 'Registration failed';

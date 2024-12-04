@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Rental } from '../../Models/Rental';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cusmy-rentals',
@@ -12,7 +13,7 @@ export class CusmyRentalsComponent implements OnInit{
 
   rentals: Rental[] = [];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService , private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.loadRentals();
@@ -40,6 +41,7 @@ export class CusmyRentalsComponent implements OnInit{
   returnRental(rentalId: number): void {
     this.rentalService.returnRental(rentalId).subscribe((response) => {
       alert(response.Message);
+      this.toastr.success('Returned .');
       this.loadRentals(); 
     });
   }

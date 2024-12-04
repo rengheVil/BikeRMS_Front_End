@@ -12,6 +12,7 @@ import { User } from '../../Models/User';
   styleUrl: './cusmyrental-requests.component.css'
 })
 export class CusmyrentalRequestsComponent implements OnInit{
+
    LoggedinUser =localStorage.getItem("user") || '';
   User:User=JSON.parse(this.LoggedinUser)
   rentalRequests: RentalRequest[] = [];
@@ -26,8 +27,14 @@ export class CusmyrentalRequestsComponent implements OnInit{
     this.loadRentalRequests();
   }
 
+  
+
   loadRentalRequests(): void {
-    this.rentalService.getRentals(this.userId).subscribe(data => {
+    let userId = parseInt(localStorage.getItem("userId") || "");
+    console.log(userId);
+     let user: any;
+     console.log(user);
+    this.rentalService.getRentals(userId).subscribe(data => {
       this.rentalRequests = data;
       console.log(data);
     },
@@ -35,6 +42,7 @@ export class CusmyrentalRequestsComponent implements OnInit{
     console.log(err.message)
   });
   }
+
 
  
 }
