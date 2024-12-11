@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , Input, OnInit } from '@angular/core';
 import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Router } from '@angular/router';
@@ -7,15 +7,15 @@ import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
-  selector: 'app-cusavailable-bikes',
-  templateUrl: './cusavailable-bikes.component.html',
-  styleUrl: './cusavailable-bikes.component.css'
+  selector: 'app-cusselect-date',
+  templateUrl: './cusselect-date.component.html',
+  styleUrl: './cusselect-date.component.css'
 })
-export class CusavailableBikesComponent implements OnInit {
+export class CusselectDateComponent implements OnInit {
 
 
   motorbikes: any[] = [];
-  selected!: number;
+  @Input() test : any;
 
   constructor(private bikeService: BikeService, private rentalService: RentalService, private fb: FormBuilder , private toastr: ToastrService) {
 
@@ -25,11 +25,7 @@ export class CusavailableBikesComponent implements OnInit {
     this.loadMotorbikes();
   }
 
-  // loadMotorbikes(): void {
-  //   this.bikeService.getMotorbikes().subscribe((data) => {
-  //     this.motorbikes = data;
-  //   });
-  // }
+  
 
   loadMotorbikes(): void {
 

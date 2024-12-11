@@ -27,12 +27,16 @@
             'text-danger': request.status === 'pending'
           }"> {{ request.status }}</td>
           <td>
-            <button
-              class="btn btn-success"
-              *ngIf="request.status === 'pending'"
-              (click)="approveRequest(request.id)">    Approve   </button>
-            
-              
+           
+              <div class="d-grid gap-3 d-md-block">
+                <button
+                class="btn btn-success gap-3 "
+                *ngIf="request.status === 'pending'"
+                (click)="approveRequest(request.id)" >    Rent  </button>
+
+                <button class="btn btn-secondary "  type="button"> Cancel </button>
+              </div>
+
           </td>
         </tr>
       </tbody>

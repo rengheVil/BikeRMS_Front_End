@@ -1,0 +1,84 @@
+
+
+<br><br>
+<div class="container mt-3">
+  <h2> Approved Customer Rental Requests </h2>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Customer</th>
+        <th>Email</th>
+        <th>Reg Number</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Request Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of rentalRequests">
+        <td>{{ request.userId }}</td>
+        <td>{{ request.email}}</td>
+        <td>{{ request?.motorbike.regNumber }}</td>
+        <td>{{ request?.motorbike.brand }}</td>
+        <td>{{ request?.motorbike.model }}</td>
+        <td>{{ request.requestDate | date: 'short' }}</td>
+        <td>
+          <button
+            class="btn btn-success"
+            type="button"
+          
+          >
+            Send Email
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--   (click)="sendEmail(request)"  -->
+
+
+<!-- <th>Status</th> -->
+<!-- <div class="container mt-3">
+    <h2> Approved Customer Rental Requests </h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Customer</th>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Request Date</th>
+          
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of rentalRequests">
+          <td>{{ request.userId }}</td>
+          <td>{{ request?.motorbike.regNumber }}</td>
+          <td >{{ request?.motorbike.brand }}</td>
+          <td>{{ request?.motorbike.model }}</td>
+          <td>{{ request.requestDate | date:'short' }}</td> -->
+          <!-- <td [ngClass]="{
+            'text-success': request.status === 'approved',
+            'text-danger': request.status === 'pending'
+          }"> {{ request.status }}</td> -->
+          <!-- <td>
+           
+              <div class="d-grid gap-3 d-md-block"> -->
+                <!-- <button
+                class="btn btn-success gap-3 "
+                *ngIf="request.status === 'pending'"
+                (click)="approveRequest(request.id)" >    Rent  </button> -->
+
+                <!-- <button class="btn btn-success "  type="button" (click)="approvedCustomer()"> Approved Customer </button>
+              </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->

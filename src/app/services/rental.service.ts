@@ -116,6 +116,11 @@ private userRegister='https://localhost:7178/api/UserAccount/Register-User'
     getOrderHistory(): Observable<any> {
       return this.http.get(this.apiHistory);
     }
+
+    // email Send
+    sendEmail(emailData: any): Observable<any> {
+      return this.http.post(`https://localhost:7178/api/SendMail/Send-Mail`, emailData);
+    }
     
 }
 

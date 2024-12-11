@@ -10,6 +10,8 @@
           <th> Id </th>
           <th> Username</th>
           <th> NIC Number</th>
+          <th> Email </th>
+          <th> Phone No </th>
           <th> Role </th>
           <th> Action </th>
           
@@ -20,10 +22,12 @@
           <td>{{ customer.id}}</td>
           <td>{{ customer.userName }}</td>
           <td>{{ customer.nic }}</td>
+          <td>{{ customer.email}}</td>
+          <td>{{ customer.phoneNumber}}</td>
           <td>{{ customer.role}}</td>
           
           <td>
-            <button class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
+            <!-- <button class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button> -->
             <button class="btn btn-danger" (click)="onDelete(customer.id)">Delete</button>
           </td>
         </tr>

@@ -30,6 +30,8 @@ import { ZaboutComponent } from './components/zabout/zabout.component';
 import { CviewRequestComponent } from './components/cview-request/cview-request.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
+import { CusselectDateComponent } from './components/cusselect-date/cusselect-date.component';
+import { MapproveCusComponent } from './components/mapprove-cus/mapprove-cus.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { ManagerDashboardComponent } from './components/manager-dashboard/manage
     ZaboutComponent,
     CviewRequestComponent,
     ManagerDashboardComponent,
+    CusselectDateComponent,
+    MapproveCusComponent,
     
   ],
   imports: [

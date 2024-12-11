@@ -47,6 +47,28 @@ background-repeat: no-repeat; "> <br>
                                     </div>
 
                                     <div class="col-12">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"> <i class="fa-solid fa-address-card"></i> </div>
+                                            <input type="email" formControlName="email" class="form-control" placeholder="Enter Email Address" />
+                                            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                                                email is required.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label>Phone Number<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-text"> <i class="fa-solid fa-address-card"></i> </div>
+                                            <input type="text" formControlName="phoneNumber" class="form-control" placeholder="Enter phone Number" />
+                                            <div *ngIf="registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched">
+                                                Phone Number is required.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
                                         <label>Select Role<span class="text-danger">*</span></label>
                                         <div class="input-group">
                                             <div class="input-group-text"> <i class="fa-duotone fa-solid fa-user-group"></i> </div>

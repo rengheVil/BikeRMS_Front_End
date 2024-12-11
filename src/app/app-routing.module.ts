@@ -18,6 +18,8 @@ import { ZaboutComponent } from './components/zabout/zabout.component';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { authGuard } from './Guards/auth.guard';
 import { McustomerDetailComponent } from './components/mcustomer-detail/mcustomer-detail.component';
+import { CusselectDateComponent } from './components/cusselect-date/cusselect-date.component';
+import { MapproveCusComponent } from './components/mapprove-cus/mapprove-cus.component';
 
 const routes: Routes = [
 
@@ -31,14 +33,15 @@ const routes: Routes = [
       { path: 'availableBike', component: AvailableBikesComponent },
       { path: 'cusRental', component: CustomerRentalsComponent },
      // { path: 'CusmyRentals', component: CusmyRentalsComponent },
-      { path: 'McusDetail' , component: McustomerDetailComponent}
+      { path: 'McusDetail' , component: McustomerDetailComponent},
+      { path: 'mApprovCus', component: MapproveCusComponent}
     ]
   },
 
 
   {
     path: 'Customer', component: CustomerComponent,
-    canActivate: [authGuard],
+  //  canActivate: [authGuard],
     children: [
       { path: '', component: ZaboutComponent },
       { path: 'CusavaiBikes', component: CusavailableBikesComponent },
@@ -52,7 +55,10 @@ const routes: Routes = [
   { path: 'Register', component: RegisterComponent },
 
   { path: '', component: StartPageComponent },
-  { path: 'about', component: ZaboutComponent }
+  { path: 'about', component: ZaboutComponent },
+  { path: 'cussetDate', component:CusselectDateComponent}
+
+
 
 ];
 
