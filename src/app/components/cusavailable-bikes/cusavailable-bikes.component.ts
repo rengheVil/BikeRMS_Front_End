@@ -16,6 +16,8 @@ export class CusavailableBikesComponent implements OnInit {
 
   motorbikes: any[] = [];
   selected!: number;
+  filteredMotorbikes: any[] = [];
+  searchTerm: string = '';
 
   constructor(private bikeService: BikeService, private rentalService: RentalService, private fb: FormBuilder , private toastr: ToastrService) {
 
@@ -74,20 +76,19 @@ export class CusavailableBikesComponent implements OnInit {
 
   // search function 
 
-  searchTerm: string = '';
-
-  // Filtered list of motorbikes
-  filteredMotorbikes = this.motorbikes;
-
-  // Filter function
-  filterBikes() {
+  filterBikes(): any {
+    console.log(this.searchTerm);
+    
     const term = this.searchTerm.toLowerCase();
-    this.filteredMotorbikes = this.motorbikes.filter(bike =>
+    this.motorbikes = this.motorbikes.filter(bike =>
       bike.brand.toLowerCase().includes(term) ||
       bike.model.toLowerCase().includes(term) ||
       bike.category.toLowerCase().includes(term)
     );
+    return this.motorbikes 
   }
+
+
 
 
 }

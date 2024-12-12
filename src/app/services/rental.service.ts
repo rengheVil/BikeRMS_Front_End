@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { Bike } from '../Models/Bike';
 import { User } from '../Models/User';
-import { Rental } from '../Models/Rental';
+import { Rental, RentalRequest } from '../Models/Rental';
 
 
 @Injectable({
@@ -60,8 +59,8 @@ private userRegister='https://localhost:7178/api/UserAccount/Register-User'
       return this.http.get<Rental[]>("https://localhost:7178/api/Rental");
     }
 
-    getRentalRequests(): Observable<any[]> {
-      return this.http.get<any[]>(this.apirequest);
+    getRentalRequests(): Observable<RentalRequest[]> {
+      return this.http.get<RentalRequest[]>(this.apirequest);
     }
     getRequestById(id : number){
       return this.http.get<any>("https://localhost:7178/api/RentalRequest/" + id)

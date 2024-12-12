@@ -2,7 +2,8 @@
 <br><br>
 
 <div class="container mt-3">
-    <h2>Rental Requests</h2>
+    <h2> Rental Requests For Bikes</h2>
+    <div class="table-wrapper">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
@@ -32,15 +33,17 @@
                 <button
                 class="btn btn-success gap-3 "
                 *ngIf="request.status === 'pending'"
-                (click)="approveRequest(request.id)" >    Rent  </button>
+                (click)="approveRequest(request.id)" style="margin-right: 10px;">  Rent  </button>
 
-                <button class="btn btn-secondary "  type="button"> Cancel </button>
+                <button class="btn btn-secondary "  type="button"><i class="fa-solid fa-xmark"></i></button>
               </div>
 
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  
   </div>
   
   <!-- {

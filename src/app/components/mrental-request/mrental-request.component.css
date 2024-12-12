@@ -16,6 +16,15 @@
   color: #333;
 }
 
+.table-wrapper {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd; /* Optional for better visibility */
+  border-radius: 8px;
+}
+
+
 /* Table Styling */
 .table {
   width: 100%;

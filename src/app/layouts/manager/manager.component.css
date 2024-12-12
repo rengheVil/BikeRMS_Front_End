@@ -387,3 +387,15 @@ height: 70px;
   text-decoration: none;
 }
 
+.dropdown-menu {
+  background-color: #333; /* Dark background */
+  color: white; /* Light text */
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #555; /* Hover effect */
+}

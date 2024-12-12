@@ -3,6 +3,9 @@ import { BikeService } from "../../services/bike.service";
 import { RentalService } from "../../services/rental.service";
 import { Bike } from '../../Models/Bike';
 import { ToastrService } from 'ngx-toastr'; 
+import { log } from 'console';
+import { EmailTemplate, emailType } from '../../Models/EmailTemplete';
+import { EmailService } from '../../services/email.service';
 
 
 
@@ -13,14 +16,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MapproveCusComponent implements OnInit {
 
-
-
-
-  rentalRequests: any[] = [];
-  
+  rentalRequests: any[] = [];  
   motorbikes: any[] = [];  requestDate:any[] =[];
 
-  constructor(private bikeService: BikeService, private rentalService: RentalService , private toastr: ToastrService) {}
+  constructor(private bikeService: BikeService, private rentalService: RentalService , private toastr: ToastrService, private emailService:EmailService) {}
 
 
 
@@ -74,6 +73,26 @@ export class MapproveCusComponent implements OnInit {
   //     this.loadRentalRequests()
   //   })
   // }
+
+
+  sendEmail(email: string,name: string){
+    console.log(email);
+    console.log(name);
+    const emailPayload: EmailTemplate = {
+      name: name,
+      email: email,
+      emailType: emailType.Accept, // Enum value for 'Accept'
+    };
+    console.log(emailPayload);
+    this.emailService.SendMAil(emailPayload).subscribe(
+      response => {
+        this.toastr.success('Email sent successfully:', response);
+      },
+      error => {
+        console.error('Error sending email:', error);
+      }
+    );
+  }
 
 }
 

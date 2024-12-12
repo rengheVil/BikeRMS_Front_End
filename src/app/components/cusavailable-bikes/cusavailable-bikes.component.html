@@ -3,9 +3,12 @@
 
   <!-- Search Bar -->
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search by brand, model, or category" [(ngModel)]="searchTerm"
+    <input type="text" class="form-control" placeholder="Search by brand, model, or category" [(ngModel)]="searchTerm" name="search"
       (input)="filterBikes()" />
   </div>
+
+  
+ 
 
   <br>
 

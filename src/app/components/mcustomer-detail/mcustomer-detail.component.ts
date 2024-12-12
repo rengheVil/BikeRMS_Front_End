@@ -15,8 +15,13 @@ import { Bike } from '../../Models/Bike';
 export class McustomerDetailComponent implements OnInit {
 
 
-  customers: any[] = [];
+  motorbikes: any[] = [];
   selected!: number;
+  filteredMotorbikes: any[] = [];
+  searchTerm: string = '';
+  customers: any[] = [];
+  filtered : any[] = [];
+
 
   constructor(private fb: FormBuilder, private bikeService: BikeService, private rentalService: RentalService) {
 
@@ -54,4 +59,24 @@ export class McustomerDetailComponent implements OnInit {
       );
     }
   }
+
+
+  filterCustomer(): any {
+    console.log(this.searchTerm);
+    this.filtered == this.customers;
+    console.log(this.searchTerm , this.searchTerm == '');
+     console.log(this.filtered);
+    console.log(this.customers);
+    
+      const term = this.searchTerm.toLowerCase();
+      console.log(term);
+      this.customers = this.customers.filter(customer =>
+        customer.id.toString().includes(term) ||
+       customer.userName.toLowerCase().includes(term) 
+      );
+      return this.customers;
+    
+   
+  }
+  
 }

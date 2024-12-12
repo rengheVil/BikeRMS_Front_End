@@ -28,7 +28,7 @@
           <td><img     [src]="'data:image/png;base64,' + bike.imageData" 
             alt="Bike Image" width="50"></td>
           <td>
-            <button class="btn btn-primary" (click)="selected=bike"  data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button>
+            <button class="btn btn-primary" (click)="selected=bike"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 10px;">Update</button>
             <button class="btn btn-danger" (click)="onDelete(bike.id)">Delete</button>
           </td>
         </tr>

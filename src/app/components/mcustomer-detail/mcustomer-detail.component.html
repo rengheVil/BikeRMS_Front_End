@@ -3,7 +3,25 @@
 
 <br><br>
 <div class="container">
+  <span>
     <h2>Customer Details </h2>
+
+     <!-- Search Bar -->
+     <div class="d-flex justify-content-end mt-3">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control form-control-md"
+          placeholder="Search by Customer Id, name "
+          [(ngModel)]="searchTerm"
+          name="search"
+          (keyup)="filterCustomer()"
+        />
+      </div>
+    </div>
+</span>
+<br>
+
     <table class="table table-bordered">
       <thead>
         <tr style=" background-color: #007bff;">
@@ -32,6 +50,7 @@
           </td>
         </tr>
       </tbody>
+
     </table>
   </div>
 

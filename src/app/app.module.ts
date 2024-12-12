@@ -32,6 +32,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ManagerDashboardComponent } from './components/manager-dashboard/manager-dashboard.component';
 import { CusselectDateComponent } from './components/cusselect-date/cusselect-date.component';
 import { MapproveCusComponent } from './components/mapprove-cus/mapprove-cus.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { MapproveCusComponent } from './components/mapprove-cus/mapprove-cus.com
     ManagerDashboardComponent,
     CusselectDateComponent,
     MapproveCusComponent,
+    SearchPipe,
     
   ],
   imports: [

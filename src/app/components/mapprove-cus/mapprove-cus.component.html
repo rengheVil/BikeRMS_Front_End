@@ -3,11 +3,47 @@
 <br><br>
 <div class="container mt-3">
   <h2> Approved Customer Rental Requests </h2>
+  <div class="table-wrapper">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Customer</th>
+          <th>Reg Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Request Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of rentalRequests">
+          <td>{{ request.userId }}</td>
+          <td>{{ request?.motorbike.regNumber }}</td>
+          <td>{{ request?.motorbike.brand }}</td>
+          <td>{{ request?.motorbike.model }}</td>
+          <td>{{ request.requestDate | date: 'short' }}</td>
+          <td>
+            <button
+              class="btn btn-success"
+              type="button"
+              (click)="sendEmail(request.user.email, request.user.userName)">
+              Send Email
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- <br><br>
+<div class="container mt-3">
+  <h2> Approved Customer Rental Requests </h2>
   <table class="table table-bordered table-striped">
     <thead class="thead-dark">
       <tr>
         <th>Customer</th>
-        <th>Email</th>
         <th>Reg Number</th>
         <th>Brand</th>
         <th>Model</th>
@@ -18,7 +54,6 @@
     <tbody>
       <tr *ngFor="let request of rentalRequests">
         <td>{{ request.userId }}</td>
-        <td>{{ request.email}}</td>
         <td>{{ request?.motorbike.regNumber }}</td>
         <td>{{ request?.motorbike.brand }}</td>
         <td>{{ request?.motorbike.model }}</td>
@@ -26,16 +61,14 @@
         <td>
           <button
             class="btn btn-success"
-            type="button"
-          
-          >
+            type="button" (click)="sendEmail(request.user.email, request.user.userName)">
             Send Email
           </button>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 <!--   (click)="sendEmail(request)"  -->
 

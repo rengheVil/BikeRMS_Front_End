@@ -1,3 +1,4 @@
+import { User } from "./User";
 
 
 export interface Bike {
@@ -40,6 +41,7 @@ export interface RentalRequest {
     category:string;
     status: string;
     approvalDate : Date;
+    Users:User[]
   }
   
 
