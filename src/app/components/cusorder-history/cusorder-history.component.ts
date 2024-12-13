@@ -12,10 +12,10 @@ import { User } from "../../Models/User";
 export class CusorderHistoryComponent implements OnInit{
 
 
-  LoggedinUser =localStorage.getItem("user") || '';
-  User:User=JSON.parse(this.LoggedinUser)
+  LoggedinUser =localStorage.getItem("userId") || '';
+
   orderHistory: any[] = [];
-  userId: number = 1002; 
+  userId: any = 1002; 
   // orderHistory: any[] = [];
 
   constructor(private bikeService: BikeService, private rentalService: RentalService) {}
@@ -30,7 +30,7 @@ export class CusorderHistoryComponent implements OnInit{
  
 
   ngOnInit(): void {
-    this.userId=this.User.id;
+    this.userId=this.LoggedinUser;
     this.fetchOrderHistory();
   }
 

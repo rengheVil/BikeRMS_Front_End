@@ -13,16 +13,15 @@ import { User } from '../../Models/User';
 })
 export class CusmyrentalRequestsComponent implements OnInit{
 
-   LoggedinUser =localStorage.getItem("user") || '';
-  User:User=JSON.parse(this.LoggedinUser)
+   LoggedinUser =localStorage.getItem("userId") || '';
   rentalRequests: RentalRequest[] = [];
-  userId: number = 0;
+  userId: any = 0;
 
   constructor(private bikeService: BikeService , private rentalService: RentalService) {}
 
   ngOnInit(): void {
    
-    this.userId=this.User.id;
+    this.userId = this.LoggedinUser;
     //this.userId=
     this.loadRentalRequests();
   }
