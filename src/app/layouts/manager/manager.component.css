@@ -193,7 +193,11 @@
 .content {
   flex: 1; /* Content takes the remaining space */
   padding: 20px;
-  background-color: #e5e6e7;
+  /* background-color: #1965b1; */
+  background-image:url('../../../../public/pic10.jpg') ;  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
   overflow-y: auto; /* Allows scrolling for content overflow */
 }
 

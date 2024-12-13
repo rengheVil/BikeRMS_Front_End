@@ -10,7 +10,7 @@ export class BikeService {
   constructor(private http : HttpClient) { }
 
   private apiUrl = 'https://localhost:7178/api/Motorbike';
-
+ 
   CreateBike1(Data:FormData){
 
     return this.http.post('https://localhost:7178/api/Motorbike', Data)
@@ -34,7 +34,9 @@ export class BikeService {
     deleteMotorbike(id: string): Observable<any> {
       return this.http.delete(`${this.apiUrl}/${id}`);
     }
-  
+    getbikeCount():Observable<any>{
+      return this.http.get(`${this.apiUrl}/countbike`)
+    }
 }
 
 //customer available Motorbikes

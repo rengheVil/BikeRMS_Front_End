@@ -120,6 +120,10 @@ private userRegister='https://localhost:7178/api/UserAccount/Register-User'
     sendEmail(emailData: any): Observable<any> {
       return this.http.post(`https://localhost:7178/api/SendMail/Send-Mail`, emailData);
     }
+//get all users
+    getAllUserList():Observable<number>{
+      return this.http.get<number>("https://localhost:7178/api/User/count");
+    }
     
 }
 

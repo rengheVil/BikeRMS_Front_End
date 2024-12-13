@@ -1,5 +1,8 @@
 import { Component , OnInit} from '@angular/core';
 import { BikeService } from '../../services/bike.service';
+import { RentalService } from '../../services/rental.service';
+import { Rental } from '../../Models/Rental';
+import { User } from '../../Models/User';
 
 
 @Component({
@@ -7,7 +10,7 @@ import { BikeService } from '../../services/bike.service';
   templateUrl: './manager-dashboard.component.html',
   styleUrl: './manager-dashboard.component.css'
 })
-export class ManagerDashboardComponent {
+export class ManagerDashboardComponent implements OnInit {
 
 
   
@@ -15,9 +18,27 @@ export class ManagerDashboardComponent {
   activeRentals: number = 0;
   monthlyRevenue: number = 0;
   motorbikes = [];
-  activeRentalsList = [];
+  activeRentalsList:Rental[] = [];
+  bikeCounts:number=0
+  userList: number = 0;
+  customerUserList: User[] = [];
+  constructor(private bikeService: BikeService,private rentalService:RentalService) {}
 
-  constructor(private bikeService: BikeService) {}
+  ngOnInit(): void {
+   this.bikeService.getbikeCount().subscribe(data=>{
+    this.bikeCounts=data
+   });
+   this.rentalService.getAllRentalRecords().subscribe(data=>{
+    this.activeRentalsList=data
+    this.activeRentals=data.length
+   });
+   this.rentalService.getAllUserList().subscribe(data=>{
+    this.userList=data
+   }
+
+   )
+   
+  }
 
   // ngOnInit(): void {implements OnInit
   //   this.fetchDashboardData();

@@ -15,6 +15,14 @@
   color: #333;
 }
 
+.table-wrapper {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd; /* Optional for better visibility */
+  border-radius: 8px;
+}
+
 /* Table Styling */
 .table {
   width: 100%;
@@ -25,10 +33,14 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+.table th{
+  background-color: #1681f3;
+}
 .table th, 
 .table td {
   text-align: left;
   padding: 12px 15px;
+  
 }
 
 .table thead.thead-dark th {

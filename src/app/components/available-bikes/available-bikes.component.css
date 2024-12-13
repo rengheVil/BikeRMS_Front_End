@@ -68,7 +68,13 @@ h2 {
 } */
 
 
-
+.table-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ddd; /* Optional for better visibility */
+  border-radius: 8px;
+}
 
 /* Table Styling */
 .table {
