@@ -87,7 +87,11 @@ private userRegister='https://localhost:7178/api/UserAccount/Register-User'
   
     //manager rentalRequests Approved
     updateRequestStatus(requestId: number): Observable<any> {
-      return this.http.get(`${this.apirequest}/${requestId}/update`);
+      return this.http.get(`${this.apirequest}/${requestId}/approval`);
+    }
+
+    rejectRentalRequest(requestId:number){
+      return this.http.delete(`https://localhost:7178/api/RentalRequest/${requestId}/reject`);
     }
 
     requestRental(motorbikeId: number, userId: number, requestDate:Date): Observable<any> {

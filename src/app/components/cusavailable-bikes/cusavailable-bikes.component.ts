@@ -61,7 +61,7 @@ export class CusavailableBikesComponent implements OnInit {
     this.rentalService.requestRental(motorbikeId, userId, requestDate).subscribe(
       (response) => {
         this.toastr.success(`${userId}, your request was successfully sent. Please wait.`);
-        alert(response.Message);
+        // alert(response.Message);
         this.loadMotorbikes();
       },
       (error) => {

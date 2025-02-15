@@ -18,7 +18,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let request of rentalRequests">
-          <td>{{ request.userId }}</td>
+          <td>{{ request.user.userName  }}</td>
           <td>{{ request?.motorbike.regNumber }}</td>
           <td >{{ request?.motorbike.brand }}</td>
           <td>{{ request?.motorbike.model }}</td>
@@ -33,9 +33,9 @@
                 <button
                 class="btn btn-success gap-3 "
                 *ngIf="request.status === 'pending'"
-                (click)="approveRequest(request.id)" style="margin-right: 10px;">  Rent  </button>
+                (click)="approveRequest(request.id);sendEmail(request.user.email, request.user.userName)" style="margin-right: 10px;">  Approved  </button>
 
-                <button class="btn btn-secondary "  type="button"><i class="fa-solid fa-xmark"></i></button>
+                <button *ngIf="request.status === 'pending'" class="btn btn-secondary"  type="button" (click)="rejectRequest(request.id)"><i class="fa-solid fa-xmark"></i></button>
               </div>
 
           </td>

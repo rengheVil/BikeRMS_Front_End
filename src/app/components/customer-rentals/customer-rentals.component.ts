@@ -52,7 +52,7 @@ export class CustomerRentalsComponent  implements OnInit{
         (error) => {
           
           console.error('Error fetching rentals:', error);
-          alert('Failed to load rentals. Please try again later.');
+          // alert('Failed to load rentals. Please try again later.');
         }
       );
     }
@@ -63,7 +63,7 @@ export class CustomerRentalsComponent  implements OnInit{
       this.rentalService.returnRental(rentalId).subscribe((response) => {       
         this.loadRentals();
         this.toastr.success(`${rentalId}, your request was successfully sent. Please wait.`);
-        alert(response.message);
+        // alert(response.message);
         this.loadRentals(); 
       });
     }
@@ -99,3 +99,6 @@ export class CustomerRentalsComponent  implements OnInit{
 
 
 }
+
+
+// refresh aahuthilla pakkanum *******************************
